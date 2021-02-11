@@ -1,0 +1,22 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap-grid.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&display=swap');
+
+body {
+   background-color: #fafafa;
+   font-family: 'Source Sans Pro', sans-serif;
+   padding: 0px;
+   margin: 0;
+}
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+.linear_primary {
+   color: #fff;
+   background: linear-gradient(to right,
+         #3e9e7e 0%,
+         #2e755d 10%,
+         #205040 20%,
+         #414141 30%);
+}

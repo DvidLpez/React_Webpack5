@@ -1,0 +1,32 @@
+.wrapper_comments {
+   margin: 0 auto;
+   max-width: 1500px;
+   padding: 30px 50px;
+   .problem {
+      background-color: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 5px;
+      padding: 10px;
+   }
+   h3 {
+      margin: 20px 0 0 0;
+   }
+   .comment_section{
+      font-size: 1.5em;
+      margin-top: 50px;
+   }
+   .comment_html {
+      padding: 5px;
+      pre {
+         background-color: #414141;
+         color: white;
+         padding: 10px;
+         border-radius: 5px;
+         overflow-x: auto;
+      }
+      a{
+         color: #df0000;
+         text-decoration: underline;
+      }
+   }
+}

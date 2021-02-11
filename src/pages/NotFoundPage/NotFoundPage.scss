@@ -1,0 +1,27 @@
+.wrapper_notfound{
+   text-align: center;
+   
+   .title{
+      font-size: 5em;
+   }
+   .subtitle{
+      font-size: 2em;
+      margin-bottom: 50px;
+   }
+   .wrapper_link {
+      padding-top: 20px;
+      .link{
+         color: #fff;
+         text-decoration: none;
+         background-color:#414141;
+         padding: 10px 40px;
+         border-radius: 5px;
+         margin-top: 10px;
+         &:hover {
+            -webkit-box-shadow: 2px 4px 11px 1px rgb(138, 138, 138);
+            -moz-box-shadow: 2px 4px 11px 1px rgba(138, 138, 138, 1);
+            box-shadow: 2px 4px 11px 1px rgba(138, 138, 138, 1);
+         }
+      }
+   }
+}   

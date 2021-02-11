@@ -1,0 +1,18 @@
+.wrapper_comment {
+   .comment_card{
+      border: 1px solid #ebebeb;
+      padding: 15px;
+      margin: 10px 0;
+      overflow: hidden;
+      background-color: #fff;
+      border-radius: 5px;
+      .comment_footer {
+         .author {
+            float: right;
+         }
+         .date {
+            float: left;
+         }
+      }
+   }
+}
