@@ -6,6 +6,7 @@ import { LOAD_ISSUES, KEEP_ISSUES_OK, KEEP_ISSUES_KO, KEEP_ISSUE_KO, KEEP_ISSUE_
 import IIssue from "../../interfaces/IIssue";
 import IPayload from '../../interfaces/IPayload';
 
+
 interface IDispatchProps {
    type: string;
 }
@@ -16,19 +17,16 @@ export const loadIssuesAction = (term: string, state: string, total: number) => 
       dispatch(launchDispatch(LOAD_ISSUES, { loading: true }));
 
       try {
-
+         const { OWNER, NAME } = SETTINGS.API_GITHUB;
          const query = state
-           ? `repo:facebook/React is:issue in:title ${term} in:body ${term} sort:created-desc is:${state}`
-           : `repo:facebook/React is:issue in:title ${term} in:body ${term} sort:created-desc`;
-         
-            console.log(query);
-            
+           ? `repo:${OWNER}/${NAME} is:issue in:title ${term} in:body ${term} sort:created-desc is:${state}`
+           : `repo:${OWNER}/${NAME} is:issue in:title ${term} in:body ${term} sort:created-desc`;
+
          const { loading, data } = await client.query({
             query: GET_ISSUES_REACT,
             variables: { query, total },
          });
-         console.log(data);
-         
+         // console.log(data);
          const result: Array<IIssue> = data.search.nodes;
          dispatch(launchDispatch(KEEP_ISSUES_OK, { term, status: state, loading, error: false, result }));
       } catch (error) {

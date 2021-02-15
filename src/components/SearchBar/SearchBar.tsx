@@ -22,7 +22,7 @@ const SearchBar: FC = (): ReactElement => {
    }
 
    const { term, state } = form;
-   const dispatch:Dispatch<any> = useDispatch();
+   const dispatch: Dispatch<any> = useDispatch();
    
    useEffect( ()=> {
       
@@ -33,6 +33,10 @@ const SearchBar: FC = (): ReactElement => {
 
    }, [term, state, dispatch]);
 
+   const isCheck = (e: string) => {  
+      return e == state ? true : false;
+   }
+   
    return(
       <Fragment>
          <div className="wrapper_search">
@@ -48,6 +52,15 @@ const SearchBar: FC = (): ReactElement => {
                <FontAwesomeIcon icon={faSearch} className="icon_search" />
             </div>
             <div className="wrapper_radio">
+               <label>ALL
+                  <input
+                     type="radio"
+                     name="state"
+                     onChange={handleForm}
+                     value=""
+                     checked={isCheck('')}
+                  />
+               </label>
                <label className="open">OPEN
                   <input 
                      type="radio"
@@ -55,6 +68,7 @@ const SearchBar: FC = (): ReactElement => {
                      className=""
                      onChange={handleForm}
                      value="open"
+                     checked={isCheck('open')}
                   />
                </label>
                <label className="closed">CLOSED
@@ -63,14 +77,7 @@ const SearchBar: FC = (): ReactElement => {
                      name="state"
                      onChange={handleForm}
                      value="closed"
-                  />
-               </label>
-               <label>ALL
-                  <input 
-                     type="radio"
-                     name="state"
-                     onChange={handleForm}
-                     value=""
+                     checked={isCheck('closed')}
                   />
                </label>
             </div>
