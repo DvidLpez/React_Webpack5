@@ -43,7 +43,7 @@ const CommentPage: FC<RouteComponentProps<IParams>> = ({ match }: RouteComponent
          { error ? <Error />: null }
          { loading ? <Loading /> : null }
          { issue ?
-            <div className="wrapper_comments">
+            <div className="wrapper wrapper_comments">
                <div className="problem">
                   <h2>{issue.title}</h2>
                   <h3>Issue description</h3>

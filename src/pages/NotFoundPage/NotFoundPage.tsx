@@ -14,7 +14,7 @@ const NotFoundPage: FC = (): ReactElement => (
         <br />
         PLEASE, SORRY FOR THE ANNOYANCE.
       </h4>
-      <div className="wrapper_link">
+      <div className="wrapper wrapper_link">
         <Link className="link" to="/">
           Go Home
         </Link>

@@ -17,7 +17,7 @@ const HomePage: FC = (): ReactElement => {
    return(
       <Fragment>
          <Header title="GitHub - Search React Issues" />
-         <div className="wrapper_home">
+         <div className="wrapper wrapper_home">
             <SearchBar />     
             {error ? <Error />: null}
             {loading ? <Loading /> : <IssuesList data={issues} /> }

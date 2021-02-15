@@ -45,7 +45,7 @@ const SearchBar: FC = (): ReactElement => {
                   type="text"
                   name="term"
                   className="input_form"
-                  placeholder="Search issues in Facebook/React repository "
+                  placeholder="Search term"
                   onChange={handleForm}
                   value={term}
                />

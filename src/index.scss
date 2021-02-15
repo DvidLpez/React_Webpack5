@@ -20,3 +20,17 @@ a{
          #205040 20%,
          #414141 30%);
 }
+
+.wrapper {
+   margin: 0 auto;
+   max-width: 1500px;
+   padding: 20px 15px;
+}
+
+@media screen and (min-width: 768px) {
+   .wrapper {
+      margin: 0 auto;
+      max-width: 1500px;
+      padding: 30px 50px;
+   }
+}

@@ -1,12 +1,24 @@
 .wrapper_header {
    padding: 10px 40px;
-   margin: 0 0 35px 0;
+   margin: 0 0 5px 0;
    .title {
       display: inline-block;
-      font-size: 2em;
+      font-size: 1.5em;
    }
    .icon_brand {
-      font-size: 3em;
+      font-size: 2em;
       margin-right: 10px;
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .wrapper_header {
+      margin: 0 0 35px 0;
+      .title {
+         font-size: 2em;
+      }
+      .icon_brand {
+         font-size: 3em;
+      }
    }
 }
