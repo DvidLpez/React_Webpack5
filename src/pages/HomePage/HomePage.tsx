@@ -8,11 +8,12 @@ import IAppState from '../../interfaces/IAppState';
 import "./HomePage.scss";
 import Header from '../../components/Header/Header';
 import IIssue from "../../interfaces/IIssue";
+import Pagination from "../../components/Pagination/Pagination";
 
 const HomePage: FC = (): ReactElement => {
 
    const {data, error, loading} = useSelector( (state:IAppState) => state.issues);
-   const issues:Array<IIssue> = data;
+   const issues:Array<IIssue> = data; 
    
    return(
       <Fragment>
@@ -22,6 +23,7 @@ const HomePage: FC = (): ReactElement => {
             {error ? <Error />: null}
             {loading ? <Loading /> : <IssuesList data={issues} /> }
          </div>
+         <Pagination />
       </Fragment>
    );
 }

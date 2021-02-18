@@ -1,17 +1,18 @@
 import { Dispatch } from "react";
 import client from "../../provider/githubapi";
-import { GET_ISSUES_REACT, GET_ISSUE_REACT } from "../../provider/githubquery";
+import { GET_ISSUES_REACT, GET_ISSUE_REACT, GET_BACK_ISSUES_REACT } from "../../provider/githubquery";
 import { SETTINGS } from "../../settings/settings";
 import { LOAD_ISSUES, KEEP_ISSUES_OK, KEEP_ISSUES_KO, KEEP_ISSUE_KO, KEEP_ISSUE_OK } from "../types";
 import IIssue from "../../interfaces/IIssue";
 import IPayload from '../../interfaces/IPayload';
+import IPageInfo from '../../interfaces/IPageInfo';
 
 
 interface IDispatchProps {
    type: string;
 }
 
-export const loadIssuesAction = (term: string, state: string, total: number) => {
+export const loadIssuesAction = (term: string, state: string, total: number, direction: string, cursor: string | null) => {
    return async (dispatch: Dispatch<IDispatchProps>): Promise<void> => {
 
       dispatch(launchDispatch(LOAD_ISSUES, { loading: true }));
@@ -22,13 +23,17 @@ export const loadIssuesAction = (term: string, state: string, total: number) => 
            ? `repo:${OWNER}/${NAME} is:issue in:title ${term} in:body ${term} sort:created-desc is:${state}`
            : `repo:${OWNER}/${NAME} is:issue in:title ${term} in:body ${term} sort:created-desc`;
 
+         const GQL = direction == 'next' ? GET_ISSUES_REACT : GET_BACK_ISSUES_REACT;
+         
          const { loading, data } = await client.query({
-            query: GET_ISSUES_REACT,
-            variables: { query, total },
+           query: GQL,
+           variables: { query, total, cursor },
          });
-         // console.log(data);
+
          const result: Array<IIssue> = data.search.nodes;
-         dispatch(launchDispatch(KEEP_ISSUES_OK, { term, status: state, loading, error: false, result }));
+         const pageInfo: IPageInfo = data.search.pageInfo;
+         dispatch(launchDispatch(KEEP_ISSUES_OK, { term, status: state, loading: loading, pageInfo: pageInfo, error: false, result }));
+
       } catch (error) {
          dispatch(launchDispatch(KEEP_ISSUES_KO, { loading: false, error: true }));
       }

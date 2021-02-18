@@ -27,7 +27,7 @@ const SearchBar: FC = (): ReactElement => {
    useEffect( ()=> {
       
       if(term.length > 2 && term.trim() !== '') {
-         const loadIssuesAPI = () => dispatch( loadIssuesAction(term, state, 21) );
+         const loadIssuesAPI = () => dispatch( loadIssuesAction(term, state, 9, 'next', null) );
          loadIssuesAPI();
       }
 
