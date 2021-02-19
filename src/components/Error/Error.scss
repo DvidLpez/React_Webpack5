@@ -2,23 +2,20 @@
    text-align: center;
    border: 1px solid #fff;
    color:#fff;
-   width: 50%;
+   width: 90%;
    margin: 0 auto;
    margin-top: 30px;
    font-weight: 600;
    background-color: #a51b1b;
    border-radius: 5px;
-   padding: 1%;
+   padding: 15px;
+   .error_icon {
+      font-size: 5em;
+   }
 }
 
-.no_results {
-   text-align: center;
-   border: 1px solid red;
-   width: 50%;
-   margin: 0 auto;
-   margin-top: 30px;
-   font-weight: 600;
-   background-color: #ffb3b3;
-   border-radius: 5px;
-   padding: 1%;
+@media screen and (min-width: 768px) {
+   .wrapper_error {
+      width: 60%;
+   }
 }

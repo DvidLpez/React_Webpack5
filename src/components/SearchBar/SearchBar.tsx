@@ -8,6 +8,14 @@ import "./SearchBar.scss";
 
 const SearchBar: FC = (): ReactElement => {
 
+
+
+   // useEffect(()=> {
+   //    document.getElementById('searchbar')?.focus();
+   //    console.log('focus');
+      
+   // }, [])
+
    const { term:word, status: statusCheckBox } = useSelector((state: IAppState) => state.issues);
    const [form, setForm] = useState({
       term: word,
@@ -41,15 +49,19 @@ const SearchBar: FC = (): ReactElement => {
       <Fragment>
          <div className="wrapper_search">
             <div className="search">
-               <input 
-                  type="text"
-                  name="term"
-                  className="input_form"
-                  placeholder="Search term"
-                  onChange={handleForm}
-                  value={term}
-               />
-               <FontAwesomeIcon icon={faSearch} className="icon_search" />
+               <span>
+                  <input 
+                     id="searchbar"
+                     type="text"
+                     name="term"
+                     className="gate"
+                     // className="input_form"
+                     placeholder="Search term"
+                     onChange={handleForm}
+                     value={term}
+                  />
+                  <label><FontAwesomeIcon icon={faSearch} className="icon_search" /></label>
+               </span>
             </div>
             <div className="wrapper_radio">
                <label>ALL

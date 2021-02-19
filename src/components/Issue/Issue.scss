@@ -48,6 +48,7 @@
    .card_body {
       position: relative;
       min-height: 230px;
+      overflow: hidden;
      .opacity_text{
         position: absolute;
         top: 0;
@@ -60,10 +61,12 @@
         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.48503151260504207) 75%, rgba(255, 255, 255, 1) 100%);
      }
    }
-
    .card_footer {
       .date{
          float: right;
+      }
+      .date, .author {
+         font-size: 0.9em;
       }
    }
 }

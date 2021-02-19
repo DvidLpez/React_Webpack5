@@ -1,8 +1,10 @@
-import { faComments, faUser } from "@fortawesome/free-regular-svg-icons";
+import { faComments, faUser, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 import React, {  FC, ReactElement } from "react";
 import { Link } from 'react-router-dom';
 import IPropsIssue from '../../interfaces/IPropsIssue';
+
 
 import './Issue.scss';
 
@@ -22,7 +24,7 @@ const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
                <div className="card_header">
                   <div className="row">
                      <div className="col-12 col-sm-10 col-md-9">
-                        <b className="title">{cutString(title, 60)}</b>
+                        <b className="title">{cutString(title, 55)}</b>
                      </div>
                      <div className="col-12 col-sm-2 col-md-3">
                         <div className="total_comments">
@@ -41,14 +43,13 @@ const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
                <div className="card_footer">
                   <div className="row">
                      <div className="col-6">
-                        <b className="author"><FontAwesomeIcon icon={faUser} className="icon_user" /> {author.login}</b>
+                        <p className="author"><FontAwesomeIcon icon={faUser} /> {author.login}</p>
                      </div>
                      <div className="col-6">
-                        <b className="date">{createdAt}</b>
+                        <p className="date"><FontAwesomeIcon icon={faCalendarAlt} /> {moment(createdAt).format('L, HH:mm')}</p>
                      </div>
                   </div>
                </div>
-               {/* <p>{item.body}</p> */}
             </div>
          </Link>
       </div>

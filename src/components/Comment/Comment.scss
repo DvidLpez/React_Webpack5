@@ -7,12 +7,16 @@
       background-color: #fff;
       border-radius: 5px;
       .comment_footer {
+         .date, .author {
+            margin: 5px 10px;
+         }
          .author {
             float: right;
          }
          .date {
             float: left;
          }
+         
       }
    }
 }

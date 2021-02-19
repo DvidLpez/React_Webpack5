@@ -1,6 +1,9 @@
 import React, { FC, Fragment, ReactElement } from "react";
 import IPropsComment from "../../interfaces/IPropsComment";
+import { faComments, faUser, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Comment.scss';
+import moment from "moment";
 
 const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => {
 
@@ -20,10 +23,10 @@ const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => 
                      <div className="comment_footer">
                         <div className="row">
                            <div className="col-6">
-                              <p className="date">{createdAt}</p>
+                              <p className="date"><FontAwesomeIcon icon={faCalendarAlt} className="icon_user" /> {moment(createdAt).format('L, LT')}</p>
                            </div>
                            <div className="col-6">
-                              <p className="author">{author.login}</p>
+                              <p className="author"><FontAwesomeIcon icon={faUser} className="icon_user" /> {author.login}</p>
                            </div>
                         </div>
                      </div>
