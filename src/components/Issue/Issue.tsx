@@ -43,10 +43,10 @@ const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
                <div className="card_footer">
                   <div className="row">
                      <div className="col-6">
-                        <p className="author"><FontAwesomeIcon icon={faUser} /> {author.login}</p>
+                        <p className="author"><FontAwesomeIcon icon={faUser} /> {author ? author.login : null}</p>
                      </div>
                      <div className="col-6">
-                        <p className="date"><FontAwesomeIcon icon={faCalendarAlt} /> {moment(createdAt).format('L, HH:mm')}</p>
+                        <p className="date"><FontAwesomeIcon icon={faCalendarAlt} /> {moment(createdAt).format('DD/MM/YYYY HH:mm')}</p>
                      </div>
                   </div>
                </div>

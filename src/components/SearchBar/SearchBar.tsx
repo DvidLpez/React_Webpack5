@@ -17,6 +17,7 @@ const SearchBar: FC = (): ReactElement => {
    // }, [])
 
    const { term:word, status: statusCheckBox } = useSelector((state: IAppState) => state.issues);
+
    const [form, setForm] = useState({
       term: word,
       state: statusCheckBox
@@ -33,9 +34,11 @@ const SearchBar: FC = (): ReactElement => {
    const dispatch: Dispatch<any> = useDispatch();
    
    useEffect( ()=> {
+
+      const value = term.trim();
       
-      if(term.length > 2 && term.trim() !== '') {
-         const loadIssuesAPI = () => dispatch( loadIssuesAction(term, state, 9, 'next', null) );
+      if( value.length > 2 ) {
+         const loadIssuesAPI = () => dispatch( loadIssuesAction(term.trim(), state, 9, 'next', null) );
          loadIssuesAPI();
       }
 
