@@ -13,9 +13,9 @@
       outline: none;
       padding: 7px 10px 7px 10px;
       width: 100%;
-      -webkit-box-shadow: 0 0 20px 5px rgb(75, 75, 75);
-      -moz-box-shadow: 0 0 20px 5px rgba(75, 75, 75, 1);
-      box-shadow: 0 0 20px 5px rgba(75, 75, 75, 1);
+      -webkit-box-shadow: 0 0 20px 5px rgb(163, 163, 163);
+      -moz-box-shadow: 0 0 20px 5px rgba(163, 163, 163, 1);
+      box-shadow: 0 0 20px 5px rgba(163, 163, 163, 1);
       text-indent: 55px;
       transition: all 0.3s ease-in-out;
 
@@ -88,19 +88,19 @@
       }
     }
 
-    .input_form {
-      border: 1px solid #838383;
-      border-radius: 30px;
-      color: #2e2e2e;
-      font-size: 1.2em;
-      font-style: italic;
-      outline: none;
-      padding: 15px 30px;
-      width: 100%;
-      -webkit-box-shadow: 0 0 20px 5px rgb(75, 75, 75);
-      -moz-box-shadow: 0 0 20px 5px rgba(75, 75, 75, 1);
-      box-shadow: 0 0 20px 5px rgba(75, 75, 75, 1);
-    }
+    // .input_form {
+    //   border: 1px solid #838383;
+    //   border-radius: 30px;
+    //   color: #2e2e2e;
+    //   font-size: 1.2em;
+    //   font-style: italic;
+    //   outline: none;
+    //   padding: 15px 30px;
+    //   width: 100%;
+    //   -webkit-box-shadow: 0 0 20px 5px rgb(163, 163, 163);
+    //   -moz-box-shadow: 0 0 20px 5px rgba(163, 163, 163, 1);
+    //   box-shadow: 0 0 20px 5px rgba(163, 163, 163, 1);
+    // }
 
     .icon_search {
       color: #fff;
@@ -165,10 +165,10 @@
           }
         }
       }
-      .input_form {
-        font-size: 1.4em;
-        width: 80%;
-      }
+      // .input_form {
+      //   font-size: 1.4em;
+      //   width: 80%;
+      // }
       .icon_search {
         font-size: 1.4em;
         top: 15px;

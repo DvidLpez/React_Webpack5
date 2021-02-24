@@ -19,7 +19,7 @@ const IssuesList: FC<IPropsIssueList> = ({data}: IPropsIssueList): ReactElement 
                   <p>Not found results to {term}</p>
                </div> 
             : (
-               <div className="row">
+               <div className="box">
                   {items.map((item: IIssue) => (
    
                      <Issue key={item.number} data={item}/>   

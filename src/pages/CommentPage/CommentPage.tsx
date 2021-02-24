@@ -9,6 +9,7 @@ import IIssue from '../../interfaces/IIssue';
 import { loadIssueAction } from "../../redux/actions/issuesAction";
 import './CommentPage.scss';
 import { RouteComponentProps, useLocation } from "react-router-dom";
+import ButtomHome from "../../components/ButtomHome/ButtomHome";
 
 type IParams = {
    number: string;
@@ -40,6 +41,7 @@ const CommentPage: FC<RouteComponentProps<IParams>> = ({ match }: RouteComponent
    return (
       <Fragment>
          <Header title="Issue comments"/>
+         <ButtomHome />
          { error ? <Error />: null }
          { loading ? <Loading /> : null }
          { issue ?

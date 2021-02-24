@@ -1,5 +1,8 @@
-@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap-grid.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&display=swap');
+
+html {
+   box-sizing: border-box;
+}
 
 body {
    background-color: #fafafa;
@@ -7,9 +10,44 @@ body {
    padding: 0px;
    margin: 0;
 }
+
+*,
+::after,
+::before {
+   box-sizing: inherit
+}
+
 a{
    text-decoration: none;
    color: #000;
+}
+
+.box {
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   margin-right: -15px;
+   margin-left: -15px
+}
+
+.box-middle,
+.box-issue-middle,
+.box-issue-short 
+.box-comment-short,
+.box-comment-large,
+.box-title-short,
+.box-title-large
+{
+   position: relative;
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px
+}
+.box-middle {
+   -ms-flex: 0 0 50%;
+   flex: 0 0 50%;
+   max-width: 50%
 }
 
 .linear_primary {
@@ -27,10 +65,47 @@ a{
    padding: 20px 15px;
 }
 
-@media screen and (min-width: 768px) {
+
+@media (min-width:576px) {
+   .box-comment-short {
+      -ms-flex: 0 0 16.666667%;
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%
+   }
+   .box-title-large {
+      -ms-flex: 0 0 83.333333%;
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%
+   }
+}
+
+@media (min-width:768px) {
+   .box-comment-large {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%
+   }
+   .box-issue-middle {
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%
+   }
+   .box-title-short {
+      -ms-flex: 0 0 75%;
+      flex: 0 0 75%;
+      max-width: 75%
+   }
    .wrapper {
       margin: 0 auto;
       max-width: 1500px;
       padding: 30px 50px;
    }
+}
+
+@media (min-width:1200px) {
+   .box-issue-short {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%
+   } 
 }

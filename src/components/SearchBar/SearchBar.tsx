@@ -8,14 +8,6 @@ import "./SearchBar.scss";
 
 const SearchBar: FC = (): ReactElement => {
 
-
-
-   // useEffect(()=> {
-   //    document.getElementById('searchbar')?.focus();
-   //    console.log('focus');
-      
-   // }, [])
-
    const { term:word, status: statusCheckBox } = useSelector((state: IAppState) => state.issues);
 
    const [form, setForm] = useState({

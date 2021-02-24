@@ -3,7 +3,7 @@ import IPropsHeader from "../../interfaces/IPropsHeader";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import "./Header.scss";
-import { Link } from 'react-router-dom';
+
 
 const Header: FC<IPropsHeader> = ({ title }: IPropsHeader): ReactElement => {
    return (
