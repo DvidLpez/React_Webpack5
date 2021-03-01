@@ -1,15 +1,17 @@
-import React, { Dispatch, FC, Fragment, ReactElement } from "react";
+import React, { FC, Fragment, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadIssuesAction } from "../../redux/actions/issuesAction";
 import IAppState from "../../interfaces/IAppState";
+
 import "./Pagination.scss";
+
 
 const Pagination: FC = (): ReactElement => {
 
    const { term, status, pageInfo, data, loading } = useSelector((state: IAppState) => state.issues);
    const {hasPreviousPage, hasNextPage} = pageInfo;
-   const dispatch: Dispatch<any> = useDispatch();
 
+   const dispatch = useDispatch();
    const moreItems = (e: string) => {
       if (e === 'prev') {
          const loadIssuesAPI = () => dispatch(loadIssuesAction(term, status, 9, 'prev', pageInfo.startCursor));

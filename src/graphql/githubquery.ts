@@ -1,6 +1,9 @@
-import { gql } from "@apollo/client";
+import { DocumentNode, gql } from "@apollo/client";
 
-export const GET_ISSUES_REACT = gql`
+/**
+ * GQL to search issues since cursor if is available
+ */
+export const GET_ISSUES_REACT: DocumentNode = gql`
   query($query: String!, $total: Int!, $cursor: String) {
     search(query: $query, type: ISSUE, last: $total, after: $cursor) {
       pageInfo {
@@ -39,13 +42,16 @@ export const GET_ISSUES_REACT = gql`
   }
 `;
 
-export const GET_BACK_ISSUES_REACT = gql`
+/**
+ * GQL to search issues before  cursor
+ */
+export const GET_BACK_ISSUES_REACT: DocumentNode = gql`
   query($query: String!, $total: Int!, $cursor: String) {
     search(query: $query, type: ISSUE, last: $total, before: $cursor) {
       pageInfo {
-        endCursor,
-        hasNextPage,
-        hasPreviousPage,
+        endCursor
+        hasNextPage
+        hasPreviousPage
         startCursor
       }
       nodes {
@@ -78,7 +84,10 @@ export const GET_BACK_ISSUES_REACT = gql`
   }
 `;
 
-export const GET_ISSUE_REACT = gql`
+/**
+ * GQL to search issues number
+ */
+export const GET_ISSUE_REACT: DocumentNode = gql`
   query($number: Int!, $owner: String!, $name: String!) {
     repository(owner: $owner, name: $name) {
       issue(number: $number) {

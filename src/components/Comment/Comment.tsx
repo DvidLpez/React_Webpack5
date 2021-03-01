@@ -13,7 +13,6 @@ const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => 
       <Fragment>
          <div className="wrapper_comment">
             <div className="box">
-            
                   <div className="comment_card">
                      <div className="comment_body">
                         <p>{body}</p>

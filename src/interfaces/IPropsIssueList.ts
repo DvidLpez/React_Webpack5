@@ -1,4 +1,3 @@
-import IComment from "./IComment";
 import IIssue from "./IIssue";
 
 export default interface IPropsIssueList {

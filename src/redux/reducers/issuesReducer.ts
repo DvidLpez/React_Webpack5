@@ -38,6 +38,7 @@ export default (state = initialState, action: IAction): INewState => {
       return {
         ...state,
         loading: action.payload.loading,
+        error: action.payload.error,
         data: action.payload.result,
         term: action.payload.term,
         pageInfo: action.payload.pageInfo,

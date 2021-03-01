@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage  from "./pages/HomePage/HomePage";
 import CommentPage  from "./pages/CommentPage/CommentPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import client from "./provider/githubapi";
+import client from "./graphql/githubapi";
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import "./index.scss";

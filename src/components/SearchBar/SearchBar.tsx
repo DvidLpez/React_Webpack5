@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, Fragment, ReactElement, useEffect, useState } from "react";
+import React, { FC, Fragment, ReactElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import IAppState from "../../interfaces/IAppState";
 import { loadIssuesAction } from "../../redux/actions/issuesAction";
@@ -23,7 +23,7 @@ const SearchBar: FC = (): ReactElement => {
    }
 
    const { term, state } = form;
-   const dispatch: Dispatch<any> = useDispatch();
+   const dispatch = useDispatch();
    
    useEffect( ()=> {
 

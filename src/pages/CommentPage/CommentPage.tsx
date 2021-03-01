@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, Fragment, ReactElement, useEffect } from "react";
+import React, { FC, Fragment, ReactElement, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CommentsList from "../../components/CommentsList/CommentsList";
 import Header from "../../components/Header/Header";
@@ -7,15 +7,15 @@ import Error from "../../components/Error/Error";
 import IAppState  from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
 import { loadIssueAction } from "../../redux/actions/issuesAction";
-import './CommentPage.scss';
 import { RouteComponentProps, useLocation } from "react-router-dom";
 import ButtomHome from "../../components/ButtomHome/ButtomHome";
+import './CommentPage.scss';
 
-type IParams = {
+type TCommentsParams = {
    number: string;
 }
 
-const CommentPage: FC<RouteComponentProps<IParams>> = ({ match }: RouteComponentProps<IParams>): ReactElement => {
+const CommentPage: FC<RouteComponentProps<TCommentsParams>> = ({ match }: RouteComponentProps<TCommentsParams>): ReactElement => {
    
    const { pathname } = useLocation();
 
@@ -27,7 +27,7 @@ const CommentPage: FC<RouteComponentProps<IParams>> = ({ match }: RouteComponent
    const { data, error, loading } = useSelector((state: IAppState) => state.issues);
    const issue: IIssue = data.filter((issue: IIssue) => issue.number == parseInt(number) )[0];
    
-   const dispatch: Dispatch<any> = useDispatch();
+   const dispatch = useDispatch();
 
    useEffect(() => {
 
