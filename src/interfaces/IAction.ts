@@ -5,6 +5,7 @@ export default interface IAction {
    type: string;
    payload: {
       result?: Array<IIssue>;
+      issueCount: number;
       pageInfo: IPageInfo;
       term: string;
       status: string;

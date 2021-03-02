@@ -1,4 +1,4 @@
-import React, { FC, Fragment, ReactElement, useEffect, useState } from "react";
+import React, { FC, ReactElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import IAppState from "../../interfaces/IAppState";
 import { loadIssuesAction } from "../../redux/actions/issuesAction";
@@ -14,82 +14,72 @@ const SearchBar: FC = (): ReactElement => {
       term: word,
       state: statusCheckBox
    })
-
+   
+   const { term, state } = form;
+   const dispatch = useDispatch();
+   
+   
    const handleForm = (e:React.ChangeEvent<HTMLInputElement>) => { 
       setForm({
          ...form,
          [e.target.name]: e.target.value
       })
    }
-
-   const { term, state } = form;
-   const dispatch = useDispatch();
    
    useEffect( ()=> {
-
-      const value = term.trim();
-      
-      if( value.length > 2 ) {
-         const loadIssuesAPI = () => dispatch( loadIssuesAction(term.trim(), state, 9, 'next', null) );
-         loadIssuesAPI();
+      if (term.trim().length > 2 ) {
+         dispatch( loadIssuesAction(term.trim(), state, 9, 'next', null) );
       }
-
    }, [term, state, dispatch]);
 
-   const isCheck = (e: string) => {  
-      return e == state ? true : false;
-   }
    
    return(
-      <Fragment>
-         <div className="wrapper_search">
-            <div className="search">
-               <span>
-                  <input 
-                     id="searchbar"
-                     type="text"
-                     name="term"
-                     className="gate"
-                     // className="input_form"
-                     placeholder="Search term"
-                     onChange={handleForm}
-                     value={term}
-                  />
-                  <label><FontAwesomeIcon icon={faSearch} className="icon_search" /></label>
-               </span>
-            </div>
-            <div className="wrapper_radio">
-               <label>ALL
-                  <input
-                     type="radio"
-                     name="state"
-                     onChange={handleForm}
-                     value=""
-                     checked={isCheck('')}
-                  />
-               </label>
-               <label className="open">OPEN
-                  <input 
-                     type="radio"
-                     name="state"
-                     className=""
-                     onChange={handleForm}
-                     value="open"
-                     checked={isCheck('open')}
-                  />
-               </label>
-               <label className="closed">CLOSED
-                  <input 
-                     type="radio"
-                     name="state"
-                     onChange={handleForm}
-                     value="closed"
-                     checked={isCheck('closed')}
-                  />
-               </label>
-            </div>
+      <div className="wrapper_search">
+         <div className="search">
+            <span>
+               <input 
+                  id="searchbar"
+                  type="text"
+                  name="term"
+                  className="gate"
+                  placeholder="Search term"
+                  onChange={handleForm}
+                  value={term}
+               />
+               <label><FontAwesomeIcon icon={faSearch} className="icon_search" /></label>
+            </span>
          </div>
-      </Fragment>
+         <div className="wrapper_radio">
+            <label>ALL
+               <input
+                  type="radio"
+                  name="state"
+                  onChange={handleForm}
+                  value=""
+                  checked={'' == state ? true : false}
+               />
+            </label>
+            <label className="open">OPEN
+               <input 
+                  type="radio"
+                  name="state"
+                  className=""
+                  onChange={handleForm}
+                  value="open"
+                  checked={'open' == state ? true : false}
+               />
+            </label>
+            <label className="closed">CLOSED
+               <input 
+                  type="radio"
+                  name="state"
+                  onChange={handleForm}
+                  value="closed"
+                  checked={'closed' == state ? true : false}
+               />
+            </label>
+         </div>
+      </div>
    );
 }
 export default SearchBar;

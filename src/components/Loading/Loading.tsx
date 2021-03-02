@@ -1,20 +1,18 @@
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FC, Fragment, ReactElement } from "react";
-faSpinner
+import React, { FC, ReactElement } from "react";
 import './Loading.scss';
 
 const Loading: FC = (): ReactElement => {
 
    return (
-      <Fragment>
-         <div className="wrapper_loading">
-            <div className="content">
-               <FontAwesomeIcon icon={faSpinner} className="icon_spinner" />
-               <p className="loading_text">Loading</p>
-            </div>
+      <div className="wrapper_loading">
+         <div className="content">
+            <FontAwesomeIcon icon={faSpinner} className="icon_spinner" />
+            <p className="loading_text">Loading</p>
          </div>
-      </Fragment>
+      </div>
+      
    )
 }
 export default Loading;

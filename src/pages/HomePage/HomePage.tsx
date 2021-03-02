@@ -1,6 +1,5 @@
 import React, { FC, Fragment, ReactElement } from "react";
 import { useSelector } from 'react-redux';
-import Error from "../../components/Error/Error";
 import IssuesList from "../../components/IssuesList/IssuesList";
 import Loading from "../../components/Loading/Loading";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -12,7 +11,7 @@ import "./HomePage.scss";
 
 const HomePage: FC = (): ReactElement => {
 
-   const {data, error, loading} = useSelector( (state:IAppState) => state.issues);
+   const {data, loading} = useSelector( (state:IAppState) => state.issues);
    const issues:Array<IIssue> = data; 
    
    return(
@@ -20,7 +19,6 @@ const HomePage: FC = (): ReactElement => {
          <Header title="GitHub - Search React Issues" />
          <div className="wrapper wrapper_home">
             <SearchBar />     
-            {error ? <Error />: null}
             {loading ? <Loading /> : <IssuesList data={issues} /> }
          </div>
          <Pagination />

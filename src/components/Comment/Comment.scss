@@ -1,12 +1,15 @@
 .wrapper_comment {
    .comment_card{
       border: 1px solid #ebebeb;
-      padding: 15px;
+      padding: 15px 20px;
       margin: 10px 15px;
       overflow: hidden;
       background-color: #fff;
       border-radius: 5px;
       width: 100%;
+      .comment_body{
+         overflow: hidden;
+      }
       .comment_footer {
          .date, .author {
             margin: 5px 10px;

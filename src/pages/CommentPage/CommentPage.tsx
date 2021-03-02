@@ -1,14 +1,17 @@
 import React, { FC, Fragment, ReactElement, useEffect } from "react";
+import { RouteComponentProps, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
+import { loadIssueAction } from "../../redux/actions/issuesAction";
+import ButtomHome from "../../components/ButtomHome/ButtomHome";
 import CommentsList from "../../components/CommentsList/CommentsList";
 import Header from "../../components/Header/Header";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import IAppState  from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
-import { loadIssueAction } from "../../redux/actions/issuesAction";
-import { RouteComponentProps, useLocation } from "react-router-dom";
-import ButtomHome from "../../components/ButtomHome/ButtomHome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faComments, faCalendarAlt, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import './CommentPage.scss';
 
 type TCommentsParams = {
@@ -32,8 +35,7 @@ const CommentPage: FC<RouteComponentProps<TCommentsParams>> = ({ match }: RouteC
    useEffect(() => {
 
       if (!issue) {
-         const loadIssueAPI = () => dispatch(loadIssueAction(parseInt(number)));
-         loadIssueAPI();
+         dispatch(loadIssueAction(parseInt(number)));
       }
 
    }, [dispatch, issue, number]);
@@ -47,11 +49,29 @@ const CommentPage: FC<RouteComponentProps<TCommentsParams>> = ({ match }: RouteC
          { issue ?
             <div className="wrapper wrapper_comments">
                <div className="problem">
-                  <h2>{issue.title}</h2>
-                  <h3>Issue description</h3>
+                  <div className="box_info">
+                     <div className="info">
+                        <p className={issue.state.toLocaleLowerCase()}>{issue.state}</p>
+                     </div>
+                     <div className="info">
+                        <FontAwesomeIcon icon={faUser} /> <p>{issue.author?.login}</p>
+                     </div>
+                     <div className="info">
+                        <FontAwesomeIcon icon={faCalendarAlt} /><p> {moment(issue.createdAt).format('DD/MM/YYYY HH:mm')}</p>
+                     </div>
+                     <div className="info">
+                        <FontAwesomeIcon icon={faComments} className="icon_comments" /><p> {issue.comments.totalCount} </p>
+                     </div>
+                     <div className="info">
+                        <a href={issue.url} target="_blank" rel="noopener noreferrer">
+                           <p>See in Github</p> <FontAwesomeIcon icon={faExternalLinkAlt} className="icon_brand" />
+                        </a>
+                     </div>
+                  </div>
+                  <h2>{issue.title} <span className="issue_number">#{issue.number}</span></h2>
                   <div className="comment_html" dangerouslySetInnerHTML={{ __html: issue.bodyHTML }} />
                </div>
-               <h3 className="comment_section">Issue comments</h3>
+               <h3 className="comment_section">*** Comments ***</h3>
                <CommentsList comments={issue.comments}/>
             </div>
          : null}

@@ -3,8 +3,42 @@
       background-color: #fff;
       border: 1px solid #ebebeb;
       border-radius: 5px;
-      padding: 10px;
+      padding: 10px 20px;
       overflow: hidden;
+      .issue_number {
+         font-size: 1.1em;
+         color: #a8a8a8;
+      }
+      .box_info{
+         display:flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         flex-flow: column wrap;
+         justify-content: space-between;
+         align-items: stretch;
+         align-content: stretch;
+         margin: 10px 0;
+         .info{
+            flex-grow: 2;
+            text-align: center;
+            padding: 10px;
+            p{
+               display: inline-block;
+               margin: 5px 5px;
+            }
+            .closed, .open {
+                color: #fff;
+                padding: 5px 20px;
+               border-radius: 5px;
+            }
+            .closed {
+               background-color: #c60404;   
+            }
+            .open {
+               background-color: #007800;
+            }
+         }
+      }
    }
    h3 {
       margin: 20px 0 0 0;
@@ -13,8 +47,12 @@
       font-size: 1.5em;
       margin-top: 50px;
    }
+   .comment_card {
+      background-color: #fffaeb;
+   }
    .comment_html {
       padding: 5px;
+      overflow: hidden;
       pre {
          background-color: #414141;
          color: white;
@@ -30,5 +68,13 @@
          max-width: 100%;
          max-height: auto;
       }
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .wrapper_comments .problem .box_info{
+         flex-direction: row;
+         flex-flow: row wrap;
+         margin: 40px 0;
    }
 }

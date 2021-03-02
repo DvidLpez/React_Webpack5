@@ -39,8 +39,19 @@ export const loadIssuesAction = (term: string, state: string, total: number, dir
          });
 
          const result: Array<IIssue> = data.search.nodes;
+         const issueCount: number = data.search.issueCount;
          const pageInfo: IPageInfo = data.search.pageInfo;
-         dispatch(launchDispatch(KEEP_ISSUES_OK, { term, status: state, loading: loading, pageInfo: pageInfo, error: false, result }));
+         dispatch(
+           launchDispatch(KEEP_ISSUES_OK, {
+             term,
+             status: state,
+             loading,
+             pageInfo,
+             error: false,
+             result,
+             issueCount,
+           })
+         );
 
       } catch (error) {
          dispatch(launchDispatch(KEEP_ISSUES_KO, { loading: false, error: true }));
@@ -69,7 +80,12 @@ export const loadIssueAction = (number: number) => {
          });
 
          const result: Array<IIssue> = [data.repository.issue];
-         dispatch(launchDispatch(KEEP_ISSUE_OK, { loading, error: false, result }));
+         dispatch(launchDispatch(KEEP_ISSUE_OK, { 
+            loading, 
+            error: false, 
+            result,
+            issueCount: 1
+          }));
          
       } catch (error) {
          // console.log(error);

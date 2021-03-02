@@ -1,11 +1,13 @@
 .no_results{
    text-align: center;
-   border: 1px solid red;
+   color:#7a7a7a;
    width: 50%;
    margin: 0 auto;
    margin-top: 30px;
    font-weight: 600;
-   background-color: #ffb3b3;
    border-radius: 5px;
    padding: 1%;
+   .icon_sweat {
+      font-size: 3em;
+   }
 }

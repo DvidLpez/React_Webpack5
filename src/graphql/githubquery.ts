@@ -6,10 +6,11 @@ import { DocumentNode, gql } from "@apollo/client";
 export const GET_ISSUES_REACT: DocumentNode = gql`
   query($query: String!, $total: Int!, $cursor: String) {
     search(query: $query, type: ISSUE, last: $total, after: $cursor) {
+      issueCount
       pageInfo {
-        endCursor,
-        hasNextPage,
-        hasPreviousPage,
+        endCursor
+        hasNextPage
+        hasPreviousPage
         startCursor
       }
       nodes {
@@ -48,6 +49,7 @@ export const GET_ISSUES_REACT: DocumentNode = gql`
 export const GET_BACK_ISSUES_REACT: DocumentNode = gql`
   query($query: String!, $total: Int!, $cursor: String) {
     search(query: $query, type: ISSUE, last: $total, before: $cursor) {
+      issueCount
       pageInfo {
         endCursor
         hasNextPage

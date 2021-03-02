@@ -1,8 +1,8 @@
 import React, { FC, Fragment, ReactElement } from "react";
 import Comment from '../Comment/Comment';
 import IComment from '../../interfaces/IComment';
-import './CommentsList.scss';
 import IPropsCommentsList from "../../interfaces/IPropsCommentsList";
+import './CommentsList.scss';
 
 const CommentsList: FC<IPropsCommentsList> = ({comments}: IPropsCommentsList): ReactElement => {
 

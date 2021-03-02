@@ -6,6 +6,7 @@ import IPageInfo from '../../interfaces/IPageInfo';
 
 const initialState: IIssuesState = {
    data: [],
+   issueCount: 0,
    pageInfo: {
      endCursor: '',
      hasNextPage: false,
@@ -19,12 +20,13 @@ const initialState: IIssuesState = {
 }
 
 interface INewState {
-   data?: Array<IIssue>;
+   data: Array<IIssue> | undefined;
+   issueCount: number;
    term: string;
-   pageInfo?: IPageInfo
+   pageInfo: IPageInfo
    status: string;
-   error?: boolean;
-   loading?: boolean;
+   error: boolean | undefined;
+   loading: boolean | undefined;
 }
 
 export default (state = initialState, action: IAction): INewState => {
@@ -40,6 +42,7 @@ export default (state = initialState, action: IAction): INewState => {
         loading: action.payload.loading,
         error: action.payload.error,
         data: action.payload.result,
+        issueCount: action.payload.issueCount,
         term: action.payload.term,
         pageInfo: action.payload.pageInfo,
         status: action.payload.status,
@@ -48,6 +51,7 @@ export default (state = initialState, action: IAction): INewState => {
       return {
         ...state,
         loading: action.payload.loading,
+        issueCount: action.payload.issueCount,
         data: action.payload.result,
       };
     case KEEP_ISSUES_KO:

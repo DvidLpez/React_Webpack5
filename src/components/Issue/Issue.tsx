@@ -1,17 +1,14 @@
-import { faComments, faUser, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import React, {  FC, ReactElement } from "react";
 import { Link } from 'react-router-dom';
+import moment from "moment";
+import { faComments, faUser, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IPropsIssue from '../../interfaces/IPropsIssue';
-
-
 import './Issue.scss';
 
 const cutString = (string:string, limit: number): string => {
    return string = (string.length > limit) ? `${string.substr(0, (limit-4))} ...` : string;
 } 
-
 
 const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
 
