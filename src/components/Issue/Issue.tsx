@@ -15,15 +15,15 @@ const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
    const { number, title, bodyText, comments, state, author, createdAt } = props.data;
 
    return (
-      <div className="box-issue-middle box-issue-short">
+      <div className="box_issue">
          <Link to={`/issue/${number}`} >
             <div className="wrapper_issue">
                <div className="card_header">
                   <div className="box">
-                     <div className="box-title-large box-title-short">
-                        <b className="title">{cutString(title, 55)}</b>
+                     <div className="box_title">
+                        <b className="title">{cutString(title, 70)}</b>
                      </div>
-                     <div className=" box-comment-short box-comment-large">
+                     <div className=" box">
                         <div className="total_comments">
                            <FontAwesomeIcon icon={faComments} className="icon_comments" />
                            {comments?.totalCount}
@@ -39,12 +39,8 @@ const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
                </div>
                <div className="card_footer">
                   <div className="box">
-                     <div className="box-middle">
-                        <p className="author"><FontAwesomeIcon icon={faUser} /> { author?.login }</p>
-                     </div>
-                     <div className="box-middle">
-                        <p className="date"><FontAwesomeIcon icon={faCalendarAlt} /> {moment(createdAt).format('DD/MM/YYYY HH:mm')}</p>
-                     </div>
+                     <p className="author"><FontAwesomeIcon icon={faUser} /> { author?.login }</p>
+                     <p className="date"><FontAwesomeIcon icon={faCalendarAlt} /> {moment(createdAt).format('DD/MM/YYYY HH:mm')}</p>
                   </div>
                </div>
             </div>

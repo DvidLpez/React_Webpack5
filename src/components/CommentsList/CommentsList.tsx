@@ -8,6 +8,9 @@ const CommentsList: FC<IPropsCommentsList> = ({comments}: IPropsCommentsList): R
 
    return (
       <Fragment>
+
+
+         {comments.nodes.length > 0 ? <h3 className="comment_section">*** Comments ***</h3> : null}
          {comments.nodes.map((item: IComment) => (
             <Comment key={item.createdAt} comment={item}/>
          ))}

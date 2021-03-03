@@ -23,8 +23,8 @@ const IssuesList: FC<IPropsIssueList> = ({data}: IPropsIssueList): ReactElement 
                </div> 
             : (
                <Fragment>
-               { items.length > 0 ? <h3>Total issues: {issueCount}</h3> : null }
-               <div className="box">
+               <div className="box_issues">
+                  {items.length > 0 ? <h3 className="total_count">Total issues: {issueCount}</h3> : null}
                   {items.map((item: IIssue) => (
                      <Issue key={item.number} data={item}/>   
                   ))}

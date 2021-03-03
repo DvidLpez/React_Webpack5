@@ -12,9 +12,9 @@ const config: webpack.Configuration = {
   entry: "./src/index.tsx",
   module: {
     rules: [
-      { 
-        test: /\.scss$/, 
-        use: ["style-loader", "css-loader", "sass-loader"] 
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(ts|js)x?$/i,
@@ -38,6 +38,7 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
+      favicon: "src/favicon.ico",
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({

@@ -1,7 +1,7 @@
 .wrapper_comments {
    .problem {
       background-color: #fff;
-      border: 1px solid #ebebeb;
+      border: 1px solid #d3d3d3;
       border-radius: 5px;
       padding: 10px 20px;
       overflow: hidden;
@@ -21,7 +21,7 @@
          .info{
             flex-grow: 2;
             text-align: center;
-            padding: 10px;
+            padding: 4px;
             p{
                display: inline-block;
                margin: 5px 5px;
@@ -75,6 +75,5 @@
    .wrapper_comments .problem .box_info{
          flex-direction: row;
          flex-flow: row wrap;
-         margin: 40px 0;
    }
 }

@@ -1,6 +1,6 @@
 export default interface IPageInfo {
-   endCursor: string;
+   endCursor: string | null;
    hasNextPage: boolean;
    hasPreviousPage: boolean;
-   startCursor: string;
+   startCursor: string | null;
 }

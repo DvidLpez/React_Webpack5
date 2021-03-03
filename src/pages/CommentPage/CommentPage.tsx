@@ -11,7 +11,8 @@ import Error from "../../components/Error/Error";
 import IAppState  from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faComments, faCalendarAlt, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faComments, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import './CommentPage.scss';
 
 type TCommentsParams = {
@@ -68,10 +69,10 @@ const CommentPage: FC<RouteComponentProps<TCommentsParams>> = ({ match }: RouteC
                         </a>
                      </div>
                   </div>
+                  <hr/>
                   <h2>{issue.title} <span className="issue_number">#{issue.number}</span></h2>
                   <div className="comment_html" dangerouslySetInnerHTML={{ __html: issue.bodyHTML }} />
                </div>
-               <h3 className="comment_section">*** Comments ***</h3>
                <CommentsList comments={issue.comments}/>
             </div>
          : null}

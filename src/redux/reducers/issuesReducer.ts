@@ -8,10 +8,10 @@ const initialState: IIssuesState = {
    data: [],
    issueCount: 0,
    pageInfo: {
-     endCursor: '',
+     endCursor: null,
      hasNextPage: false,
      hasPreviousPage: false,
-     startCursor: ''
+     startCursor: null
    },
    term: '',
    status: '',

@@ -11,3 +11,26 @@
       font-size: 3em;
    }
 }
+
+.box_issues {
+   
+   display:flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   flex-flow: column wrap;
+   justify-content: space-between;
+   align-items: stretch;
+   align-content: stretch;
+   margin: 10px 0;
+   .total_count{
+      width: 100%;
+      padding: 0 10px;
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .box_issues{
+         flex-direction: row;
+         flex-flow: row wrap;
+   }
+}
