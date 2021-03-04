@@ -1,13 +1,13 @@
 import { Dispatch } from "react";
+import { DocumentNode } from "@apollo/client";
 import client from "../../graphql/githubapi";
 import { GET_ISSUES_REACT, GET_ISSUE_REACT, GET_BACK_ISSUES_REACT } from "../../graphql/githubquery";
-import { SETTINGS } from "../../settings/settings";
 import { LOAD_ISSUES, KEEP_ISSUES_OK, KEEP_ISSUES_KO, KEEP_ISSUE_KO, KEEP_ISSUE_OK } from "../types";
+import { SETTINGS } from "../../settings/settings";
 import IIssue from "../../interfaces/IIssue";
 import IPayload from '../../interfaces/IPayload';
 import IPageInfo from '../../interfaces/IPageInfo';
 import IDispatchProps from "../../interfaces/IDispatchProps";
-import { DocumentNode } from "@apollo/client";
 
 /**
  * Returns issues from react repository

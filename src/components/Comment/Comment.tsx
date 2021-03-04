@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from "react";
-import IPropsComment from "../../interfaces/IPropsComment";
 import { faUser, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
+import IPropsComment from "../../interfaces/IPropsComment";
 import './Comment.scss';
 
 const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => {

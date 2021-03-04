@@ -1,6 +1,9 @@
 import React, { FC, Fragment, ReactElement, useEffect } from "react";
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faComments, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import { loadIssueAction } from "../../redux/actions/issuesAction";
 import ButtomHome from "../../components/ButtomHome/ButtomHome";
@@ -10,9 +13,6 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import IAppState  from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faComments, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import './CommentPage.scss';
 
 type TCommentsParams = {

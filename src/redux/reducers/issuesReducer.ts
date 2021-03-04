@@ -1,8 +1,8 @@
+import { LOAD_ISSUES, KEEP_ISSUES_OK, KEEP_ISSUES_KO, KEEP_ISSUE_KO, KEEP_ISSUE_OK } from '../types';
+// Interfaces
 import IAction from '../../interfaces/IAction';
 import IIssuesState from '../../interfaces/IIsueState';
-import { LOAD_ISSUES, KEEP_ISSUES_OK, KEEP_ISSUES_KO, KEEP_ISSUE_KO, KEEP_ISSUE_OK } from '../types';
-import IIssue from '../../interfaces/IIssue';
-import IPageInfo from '../../interfaces/IPageInfo';
+import INewState from '../../interfaces/INewState';
 
 const initialState: IIssuesState = {
    data: [],
@@ -17,16 +17,6 @@ const initialState: IIssuesState = {
    status: '',
    error: false,
    loading: false
-}
-
-interface INewState {
-   data: Array<IIssue> | undefined;
-   issueCount: number;
-   term: string;
-   pageInfo: IPageInfo
-   status: string;
-   error: boolean | undefined;
-   loading: boolean | undefined;
 }
 
 export default (state = initialState, action: IAction): INewState => {
