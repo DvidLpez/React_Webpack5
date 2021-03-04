@@ -7,14 +7,13 @@ import './Comment.scss';
 
 const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => {
 
-  const {body, bodyHTML, author, createdAt} = comment;
+  const {bodyHTML, author, createdAt} = comment;
    
    return (
       <div className="wrapper_comment">
          <div className="box">
             <div className="comment_card">
                <div className="comment_body">
-                  <p>{body}</p>
                   <div className="comment_html" dangerouslySetInnerHTML={{ __html: bodyHTML }} />
                </div>
                <hr/>
