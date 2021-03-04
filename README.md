@@ -52,9 +52,11 @@ Configuring Development
 npm install --save-dev ts-node
 ```
 
-Adding type checking wen compile
+Adding type checking wen compile in dev or prod
 ```
 npm install --save-dev fork-ts-checker-webpack-plugin @types/fork-ts-checker-webpack-plugin
+npm install --save-dev eslint-webpack-plugin
+npm install --save-dev clean-webpack-plugin
 ```
 
 ## Usage
