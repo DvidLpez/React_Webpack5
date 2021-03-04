@@ -2,7 +2,7 @@
    "name": "coding_challenge",
    "description": "User interface to search issues in Github React repository",
    "version": "1.0.0",
-   "author": "David López Blasco",
+   "author": "David López Blasco (https://lopezblasco.com)",
    "repository": {
       "type": "git",
       "url": "https://github.com/DvidLpez/React_Webpack5.git"
