@@ -11,8 +11,10 @@
 - [Redux] - Redux
 - [TypeScript] - TypeScript
 - [Babel] - Babel
+- [SASS] - SCSS
 - [ApolloGraphQl] - ApolloGraphQl
 - [API Github] - API Github GraphQl
+- [Git] - Git
 - [FontAwesome] - Font Awesome
 - [MomentJS] - MomentJS
 
@@ -92,8 +94,10 @@ npm run build
    [Redux]: <https://redux.js.org/>
    [TypeScript]: <https://www.typescriptlang.org/>
    [Babel]: <https://babeljs.io/docs/en/>
+   [SASS]: <https://sass-lang.com/>
    [ApolloGraphQl]: <https://www.apollographql.com/>
    [API Github]: <https://docs.github.com/en/graphql>
+   [Git]: <https://git-scm.com/>
    [FontAwesome]: <https://fontawesome.com/>
    [MomentJS]: <https://momentjs.com/>
   
