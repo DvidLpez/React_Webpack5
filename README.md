@@ -47,6 +47,12 @@ npm install --save-dev babel-loader
 npm install --save-dev html-webpack-plugin
 ```
 
+Adding SCSS
+```
+npm install --save-dev css-loader
+npm install --save-dev sass-loader sass webpack
+```
+
 Configuring Development
 ```
 npm install --save-dev ts-node
@@ -61,9 +67,9 @@ npm install --save-dev clean-webpack-plugin
 
 ## Usage
 
-### Development
+#### Development
 
-Open your favorite Terminal and run these commands.
+Open your favorite Terminal and run these commands. Run server in localhost
 
 ```sh
 npm run start
