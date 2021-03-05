@@ -27,12 +27,16 @@ const SearchBar: FC = (): ReactElement => {
    }
    
    useEffect( ()=> {
-      if (term.trim().length > 2 ) {
-         dispatch( loadIssuesAction(term.trim(), state, 9, 'next', null) );
-      }
+      const delayDebounce = setTimeout(() => {
+            if (term.trim().length > 2) {
+               dispatch(loadIssuesAction(term.trim(), state, 9, 'next', null));
+            }
+      }, 500)
+      return () => clearTimeout(delayDebounce)
+      
    }, [term, state, dispatch]);
 
-   
+
    return(
       <div className="wrapper_search">
          <div className="search">
