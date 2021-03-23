@@ -7,7 +7,7 @@ import Header from '../../components/Header/Header';
 import Pagination from "../../components/Pagination/Pagination";
 import IAppState from '../../interfaces/IAppState';
 import IIssue from "../../interfaces/IIssue";
-import "./HomePage.scss";
+import { Wrapper } from "../../components/StyledComponents/styledComponents";
 
 const HomePage: FC = (): ReactElement => {
 
@@ -17,10 +17,10 @@ const HomePage: FC = (): ReactElement => {
    return(
       <Fragment>
          <Header title="GitHub - Search React Issues" />
-         <div className="wrapper wrapper_home">
+         <Wrapper>
             <SearchBar />     
             {loading ? <Loading /> : <IssuesList data={issues} /> }
-         </div>
+         </Wrapper>
          <Pagination />
       </Fragment>
    );

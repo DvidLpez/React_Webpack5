@@ -1,16 +1,15 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC } from "react";
 import IPropsHeader from "../../interfaces/IPropsHeader";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import "./Header.scss";
+import { TitleHeader, WrapperHeader } from "./Styles";
 
-
-const Header: FC<IPropsHeader> = ({ title }: IPropsHeader): ReactElement => {
+const Header: FC<IPropsHeader> = ({ title }) => {
    return (
-      <div className="wrapper_header linear_primary">
+      <WrapperHeader>
          <FontAwesomeIcon icon={faGithub} className="icon_brand" />
-         <h1 className="title">{title}</h1>
-      </div>
+         <TitleHeader>{title}</TitleHeader>
+      </WrapperHeader>
    )
 }
 export default Header;

@@ -13,7 +13,8 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import IAppState  from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
-import './CommentPage.scss';
+import { Wrapper, Span } from "../../components/StyledComponents/styledComponents";
+import { Info, WrapperInfo, WrapperProblem, TextState} from "./Styles";
 
 type TCommentsParams = {
    number: string;
@@ -47,34 +48,34 @@ const CommentPage: FC<RouteComponentProps<TCommentsParams>> = ({ match }: RouteC
          <ButtomHome />
          { error ? <Error />: null }
          { loading ? <Loading /> : null }
-         { issue ?
-            <div className="wrapper wrapper_comments">
-               <div className="problem">
-                  <div className="box_info">
-                     <div className="info">
-                        <p className={issue.state.toLocaleLowerCase()}>{issue.state}</p>
-                     </div>
-                     <div className="info">
-                        <FontAwesomeIcon icon={faUser} /> <p>{issue.author?.login}</p>
-                     </div>
-                     <div className="info">
-                        <FontAwesomeIcon icon={faCalendarAlt} /><p> {moment(issue.createdAt).format('DD/MM/YYYY HH:mm')}</p>
-                     </div>
-                     <div className="info">
-                        <FontAwesomeIcon icon={faComments} className="icon_comments" /><p> {issue.comments.totalCount} </p>
-                     </div>
-                     <div className="info">
-                        <a href={issue.url} target="_blank" rel="noopener noreferrer">
-                           <p>See in Github</p> <FontAwesomeIcon icon={faExternalLinkAlt} className="icon_brand" />
-                        </a>
-                     </div>
-                  </div>
-                  <hr/>
-                  <h2>{issue.title} <span className="issue_number">#{issue.number}</span></h2>
-                  <div className="comment_html" dangerouslySetInnerHTML={{ __html: issue.bodyHTML }} />
-               </div>
-               <CommentsList comments={issue.comments}/>
-            </div>
+         { issue ? 
+               <Wrapper>
+                  <WrapperProblem>
+                     <WrapperInfo>
+                        <Info>
+                           <TextState state={issue.state.toLocaleLowerCase()}>{issue.state}</TextState>
+                        </Info>
+                        <Info>
+                           <FontAwesomeIcon icon={faUser} /> <p>{issue.author?.login}</p>
+                        </Info>
+                        <Info>
+                           <FontAwesomeIcon icon={faCalendarAlt} /><p> {moment(issue.createdAt).format('DD/MM/YYYY HH:mm')}</p>
+                        </Info>
+                        <Info>
+                           <FontAwesomeIcon icon={faComments} /><p> {issue.comments.totalCount} </p>
+                        </Info>
+                        <Info>
+                           <a href={issue.url} target="_blank" rel="noreferrer">
+                           <FontAwesomeIcon icon={faExternalLinkAlt} /> <p>See in Github</p> 
+                           </a>
+                        </Info>
+                     </WrapperInfo>
+                     <hr />
+                     <h2>{issue.title} <Span>#{issue.number}</Span></h2>
+                     <div className="comment_html" dangerouslySetInnerHTML={{ __html: issue.bodyHTML }} />
+                  </WrapperProblem>
+                  <CommentsList comments={issue.comments}/>
+               </Wrapper>
          : null}
       </Fragment>
    )

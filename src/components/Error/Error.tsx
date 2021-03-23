@@ -1,15 +1,15 @@
 import React, { FC, ReactElement } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBomb } from "@fortawesome/free-solid-svg-icons";
-import './Error.scss';
+import { WrapperError } from "./Styles";
 
 const Error: FC = (): ReactElement => {
 
    return (
-      <div className="wrapper_error">
-         <FontAwesomeIcon icon={faBomb} className="error_icon"/>
+      <WrapperError>
+         <FontAwesomeIcon icon={faBomb} className="icon_error"/>
          <p>Opps!! We have an error. Try again!!</p>
-      </div>
+      </WrapperError>
    )
 }
 export default Error;

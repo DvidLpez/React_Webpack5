@@ -34,7 +34,7 @@ const Item: FC<IPropsIssue> = (props: IPropsIssue): ReactElement => {
                </div>
                <hr />
                <div className="card_body">
-                  <p>{cutString(bodyText, 500)}</p>
+                  <p>{cutString(bodyText, 470)}</p>
                   <div className="opacity_text"></div>
                </div>
                <div className="card_footer">

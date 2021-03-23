@@ -6,7 +6,8 @@ import IPropsIssueList from "../../interfaces/IPropsIssueList";
 import Issue from "../Issue/Issue";
 import { faGrinBeamSweat } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './IssuesList.scss';
+import { Text } from "../StyledComponents/styledComponents";
+import { WrapperNoResult, WrapperIssues, TextCount } from "./Styles";
 
 const IssuesList: FC<IPropsIssueList> = ({data}: IPropsIssueList): ReactElement => {
 
@@ -17,18 +18,18 @@ const IssuesList: FC<IPropsIssueList> = ({data}: IPropsIssueList): ReactElement 
       <Fragment>
          { items.length == 0 && term.length > 0 
             ? 
-               <div className="no_results">
+               <WrapperNoResult>
                   <FontAwesomeIcon icon={faGrinBeamSweat} className="icon_sweat" />
-                  <p>Not found results to {term}</p>
-               </div> 
+                  <Text>Not found results to {term}</Text>
+               </WrapperNoResult> 
             : (
                <Fragment>
-               <div className="box_issues">
-                  {items.length > 0 ? <h3 className="total_count">Total issues: {issueCount}</h3> : null}
-                  {items.map((item: IIssue) => (
-                     <Issue key={item.number} data={item}/>   
-                  ))}
-               </div>
+                  <WrapperIssues>
+                     {items.length > 0 ? <TextCount>Total issues: {issueCount}</TextCount> : null}
+                     {items.map((item: IIssue) => (
+                        <Issue key={item.number} data={item}/>   
+                     ))}
+                  </WrapperIssues>
                </Fragment>
             )}
       </Fragment>

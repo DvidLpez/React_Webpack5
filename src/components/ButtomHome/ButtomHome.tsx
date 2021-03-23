@@ -1,15 +1,16 @@
 import React, { FC, ReactElement } from "react";
-import { Link } from 'react-router-dom';
-import './ButtomHome.scss';
+import { LinkHome } from "../StyledComponents/styledComponents";
+import { WrapperLink } from "./Styles";
+
 
 const ButtomHome: FC = (): ReactElement => {
 
    return (
-      <div className="wrapper wrapper_link">
-         <Link className="link" to="/">
+      <WrapperLink>
+         <LinkHome  to="/">
             Go Home
-         </Link>
-      </div> 
+         </LinkHome>
+      </WrapperLink> 
    )
 }
 export default ButtomHome;

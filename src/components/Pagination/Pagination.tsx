@@ -2,7 +2,7 @@ import React, { FC, Fragment, ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadIssuesAction } from "../../redux/actions/issuesAction";
 import IAppState from "../../interfaces/IAppState";
-import "./Pagination.scss";
+import { WrapperPaginate, ButtonPaginate } from './Styles';
 
 const Pagination: FC = (): ReactElement => {
 
@@ -24,24 +24,16 @@ const Pagination: FC = (): ReactElement => {
       <Fragment>
          { data.length > 0 && loading == false 
             ? 
-               <div className="paginate">
+            <WrapperPaginate>
                   {  hasPreviousPage 
-                        ? <button 
-                              className="prev_button" 
-                              disabled={!hasPreviousPage} 
-                              onClick={() => moreItems('prev')}
-                           > Previous page</button>
+                        ? <ButtonPaginate previous disabled={!hasPreviousPage}  onClick={() => moreItems('prev')}> Previous page</ButtonPaginate>
                         : null
                   }
                   {  hasNextPage 
-                        ? <button 
-                              className="next_button" 
-                              disabled={!hasNextPage} 
-                              onClick={() => moreItems('next')}
-                           > Next page</button>
+                        ? <ButtonPaginate next disabled={!hasNextPage} onClick={() => moreItems('next')}> Next page</ButtonPaginate>
                         : null
                   }
-               </div> 
+            </WrapperPaginate> 
             : 
                null
          }
