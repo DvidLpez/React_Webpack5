@@ -13,12 +13,18 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${(props) => props.theme.fonts.extraBig};
+  font-size: ${(props) => props.theme.fonts.big};
+  @media screen and (min-width: 768px) {
+    font-size: ${(props) => props.theme.fonts.extraBig};
+  }
 `;
 
 export const Subtitle = styled.h2`
-  font-size: ${(props) => props.theme.fonts.big};
+  font-size: ${(props) => props.theme.fonts.large};
   margin-bottom: ${(props) => props.theme.spaces.s50};
+  @media screen and (min-width: 768px) {
+    font-size: ${(props) => props.theme.fonts.big};
+  }
 `;
 
 export const TitleSection = styled.h3`
@@ -49,4 +55,9 @@ export const LinkHome = styled(Link)`
     -moz-box-shadow: ${(props) => props.theme.colors.shadow};
     box-shadow: ${(props) => props.theme.colors.shadow};
   }
+`;
+
+export const LineHr = styled.hr`
+  border: none;
+  border-bottom: solid 1px ${(props) => props.theme.colors.secondary};
 `;

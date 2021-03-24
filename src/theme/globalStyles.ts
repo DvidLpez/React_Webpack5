@@ -25,11 +25,6 @@ export const GlobalStyle = createGlobalStyle`
       color: ${theme.colors.primary};
    }
 
-   hr{
-      border: none;
-      border-bottom: solid 1px ${theme.colors.secondary};
-   }
-
    .icon_brand {
       font-size: ${theme.fonts.big};
       margin-right: ${theme.spaces.s15};
@@ -41,12 +36,29 @@ export const GlobalStyle = createGlobalStyle`
 
    .icon_error {
          font-size: ${theme.fonts.extraBig};
-      }
+   }
+
+   .icon_search {
+      color: #fff;
+      font-size: 1.2em;
+      position: absolute;
+      color: #fff;
+      font-size: 1em;
+      position: absolute;
+      top: 10px;
+      right: 38%;
+   }
 
    @media screen and (min-width: 768px) {
    
       .icon_brand {
          font-size: ${theme.fonts.extra};
+      }
+
+      .icon_search {
+        font-size: 1.4em;
+        top: 15px;
+        right: 6%;
       }
       
    }

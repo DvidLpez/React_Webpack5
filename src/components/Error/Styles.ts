@@ -9,8 +9,8 @@ export const WrapperError = styled(Wrapper)`
   background-color: ${(props) => props.theme.colors.danger};
   border-radius: ${(props) => props.theme.spaces.s5};
   padding: ${(props) => props.theme.spaces.s15};
-  text-align: center;
-  font-weight: 600;
+  text-align: ${(props) => props.theme.spaces.center};
+  font-weight: ${(props) => props.theme.fonts.bold};
   width: 90%;
 
   @media screen and (min-width: 768px) {

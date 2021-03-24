@@ -20,7 +20,7 @@ export const ButtonPaginate = styled.button<Props>`
   font-size: ${(props) => props.theme.fonts.small};
   cursor: pointer;
   outline: none;
-  border: 1px solid #e4e4e4;
+  border: 1px solid ${(props) => props.theme.colors.secondary};
   border-radius: ${(props) => props.theme.spaces.borderRadius};
   background-color: ${(props) => props.theme.colors.title};
 

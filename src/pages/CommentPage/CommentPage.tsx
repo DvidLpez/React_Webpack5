@@ -13,7 +13,7 @@ import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import IAppState  from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
-import { Wrapper, Span } from "../../components/StyledComponents/styledComponents";
+import { Wrapper, Span, Text, Subtitle, LineHr } from "../../components/StyledComponents/styledComponents";
 import { Info, WrapperInfo, WrapperProblem, TextState} from "./Styles";
 
 type TCommentsParams = {
@@ -56,22 +56,22 @@ const CommentPage: FC<RouteComponentProps<TCommentsParams>> = ({ match }: RouteC
                            <TextState state={issue.state.toLocaleLowerCase()}>{issue.state}</TextState>
                         </Info>
                         <Info>
-                           <FontAwesomeIcon icon={faUser} /> <p>{issue.author?.login}</p>
+                           <FontAwesomeIcon icon={faUser} /> <Text>{issue.author?.login}</Text>
                         </Info>
                         <Info>
-                           <FontAwesomeIcon icon={faCalendarAlt} /><p> {moment(issue.createdAt).format('DD/MM/YYYY HH:mm')}</p>
+                           <FontAwesomeIcon icon={faCalendarAlt} /><Text> {moment(issue.createdAt).format('DD/MM/YYYY HH:mm')}</Text>
                         </Info>
                         <Info>
-                           <FontAwesomeIcon icon={faComments} /><p> {issue.comments.totalCount} </p>
+                           <FontAwesomeIcon icon={faComments} /><Text> {issue.comments.totalCount} </Text>
                         </Info>
                         <Info>
                            <a href={issue.url} target="_blank" rel="noreferrer">
-                           <FontAwesomeIcon icon={faExternalLinkAlt} /> <p>See in Github</p> 
+                           <FontAwesomeIcon icon={faExternalLinkAlt} /> <Text>See in Github</Text> 
                            </a>
                         </Info>
                      </WrapperInfo>
-                     <hr />
-                     <h2>{issue.title} <Span>#{issue.number}</Span></h2>
+                     <LineHr />
+                     <Subtitle>{issue.title} <Span>#{issue.number}</Span></Subtitle>
                      <div className="comment_html" dangerouslySetInnerHTML={{ __html: issue.bodyHTML }} />
                   </WrapperProblem>
                   <CommentsList comments={issue.comments}/>

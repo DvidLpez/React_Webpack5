@@ -6,17 +6,15 @@ import {
 
 
 export const WrapperProblem = styled(Wrapper)`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.title};
   border: 1px solid #d3d3d3;
-  border-radius: 5px;
+  border-radius: ${(props) => props.theme.spaces.borderRadius};
   padding: 10px 20px;
   overflow: hidden;
-  margin-top: 15px;
+  margin-top: ${(props) => props.theme.spaces.s15};
   @media screen and (min-width: 768px) {
-    
-      flex-direction: row;
-      flex-flow: row wrap;
-    
+    flex-direction: row;
+    flex-flow: row wrap;
   }
 `;
 export const WrapperInfo = styled(Wrapper)`
@@ -36,7 +34,7 @@ export const WrapperInfo = styled(Wrapper)`
 export const Info = styled(Wrapper)`
   flex-grow: 2;
   text-align: center;
-  padding: 4px;
+  padding: ${(props) => props.theme.spaces.s5};
   @media screen and (min-width: 768px) {
     flex-direction: row;
     flex-flow: row wrap;
@@ -50,9 +48,9 @@ type IProps = {
 export const TextState = styled(Text)<IProps>`
   background-color: ${(props) => props.state == "closed" ? "#c60404" : "#007800"};
   color: ${(props) => props.theme.colors.title};
-  font-weight: 600;
-  padding: 10px;
+  padding: ${(props) => props.theme.spaces.s10};
   border-radius: ${(props) => props.theme.spaces.borderRadius};
+  font-weight: 600;
 `;
 
 

@@ -6,8 +6,8 @@ import {
 
 export const WrapperComment = styled(Wrapper)`
   border: 1px solid ${(props) => props.theme.colors.secondary};
-  padding: 15px 20px;
-  margin: 10px 0;
+  padding: ${(props) => props.theme.spaces.p1520};
+  margin: ${(props) => props.theme.spaces.p100};
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.backComment};
   border-radius: ${(props) => props.theme.spaces.borderRadius};

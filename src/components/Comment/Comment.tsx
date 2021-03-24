@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import IPropsComment from "../../interfaces/IPropsComment";
 import { WrapperComment, TextSmall } from "./Styles";
+import { LineHr } from "../StyledComponents/styledComponents";
 
 const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => {
 
@@ -12,7 +13,7 @@ const Comment: FC<IPropsComment> = ({comment} : IPropsComment): ReactElement => 
    return (
       <WrapperComment>
          <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
-         <hr/>
+         <LineHr/>
          <TextSmall position={"left"}>
             <FontAwesomeIcon icon={faUser} /> {author.login}
          </TextSmall> 

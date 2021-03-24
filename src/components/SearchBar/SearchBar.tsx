@@ -1,10 +1,10 @@
-import React, { FC, ReactElement, useEffect, useState } from "react";
+import React, { FC, Fragment, ReactElement, useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import IAppState from "../../interfaces/IAppState";
 import { loadIssuesAction } from "../../redux/actions/issuesAction";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import "./SearchBar.scss";
+import { InputSearch, WrapperSearch, WrapperStates } from './Styles';
 
 const SearchBar: FC = (): ReactElement => {
 
@@ -38,22 +38,19 @@ const SearchBar: FC = (): ReactElement => {
 
 
    return(
-      <div className="wrapper_search">
-         <div className="search">
-            <span>
-               <input 
+      <Fragment>
+         <WrapperSearch>
+               <InputSearch
                   id="searchbar"
                   type="text"
                   name="term"
-                  className="gate"
                   placeholder="Search term"
                   onChange={handleForm}
                   value={term}
                />
                <label><FontAwesomeIcon icon={faSearch} className="icon_search" /></label>
-            </span>
-         </div>
-         <div className="wrapper_radio">
+         </WrapperSearch>
+         <WrapperStates>
             <label>ALL
                <input
                   type="radio"
@@ -82,8 +79,8 @@ const SearchBar: FC = (): ReactElement => {
                   checked={'closed' == state ? true : false}
                />
             </label>
-         </div>
-      </div>
+         </WrapperStates>
+      </Fragment>
    );
 }
 export default SearchBar;
