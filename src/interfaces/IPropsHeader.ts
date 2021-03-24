@@ -1,3 +1,3 @@
 export default interface IPropsHeader {
-   title: string;
+   title?: string;
 }

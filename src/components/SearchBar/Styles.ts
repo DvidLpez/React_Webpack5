@@ -122,13 +122,13 @@ export const InputSearch = styled.input`
   @media screen and (min-width: 768px) {
     font-size: 1.2em;
     padding: 15px 20px 15px 40px;
-    text-indent: 60px;
+    text-indent: 90px;
     &::-webkit-input-placeholder {
-      text-indent: 60px;
+      text-indent: 90px;
     }
     + label {
       top: 9px;
-      left: 9px;
+      left: 30px;
       width: 65px;
       height: 50px;
       font-size: 1.2em;

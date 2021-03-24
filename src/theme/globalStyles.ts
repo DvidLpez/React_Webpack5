@@ -20,33 +20,31 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: inherit;
    }
 
-   a{
-      text-decoration: none;
-      color: ${theme.colors.primary};
-   }
-
    .icon_brand {
       font-size: ${theme.fonts.big};
       margin-right: ${theme.spaces.s15};
       color: ${theme.colors.title};
    }
+
    .icon_sweat {
       font-size: ${theme.fonts.extra};
    }
 
    .icon_error {
-         font-size: ${theme.fonts.extraBig};
+      font-size: ${theme.fonts.extraBig};
    }
 
    .icon_search {
-      color: #fff;
-      font-size: 1.2em;
+      color: ${theme.colors.title};
+      font-size: ${theme.fonts.small};
       position: absolute;
-      color: #fff;
-      font-size: 1em;
-      position: absolute;
-      top: 10px;
+      top: ${theme.spaces.s10};
       right: 38%;
+   }
+
+   a{
+      text-decoration: none;
+      color: ${theme.colors.primary};
    }
 
    @media screen and (min-width: 768px) {
@@ -56,10 +54,9 @@ export const GlobalStyle = createGlobalStyle`
       }
 
       .icon_search {
-        font-size: 1.4em;
-        top: 15px;
+        font-size: ${theme.fonts.medium};
+        top: ${theme.spaces.s15};
         right: 6%;
       }
-      
    }
 `;

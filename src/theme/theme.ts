@@ -1,4 +1,6 @@
-export const theme = {
+import { DefaultTheme } from "styled-components";
+
+export const theme: DefaultTheme = {
   fonts: {
     style: "'Source Sans Pro', sans-serif",
     small: "0.9em",
@@ -45,5 +47,5 @@ export const theme = {
     p3030: "30px 30px",
     button: "10px 40px",
     borderRadius: "5px",
-  },
+  }
 };
