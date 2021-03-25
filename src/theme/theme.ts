@@ -1,6 +1,4 @@
-import { DefaultTheme } from "styled-components";
-
-export const theme: DefaultTheme = {
+export const theme = {
   fonts: {
     style: "'Source Sans Pro', sans-serif",
     small: "0.9em",

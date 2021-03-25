@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import ITheme from "../../interfaces/ITheme";
 
 export const Wrapper = styled.div`
   text-align: left;

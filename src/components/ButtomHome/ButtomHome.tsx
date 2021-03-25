@@ -6,8 +6,8 @@ import { WrapperLink } from "./Styles";
 const ButtomHome: FC = (): ReactElement => {
 
    return (
-      <WrapperLink>
-         <LinkHome  to="/">
+      <WrapperLink>  
+         <LinkHome to="/">
             Go Home
          </LinkHome>
       </WrapperLink> 

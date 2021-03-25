@@ -1,47 +1,38 @@
-// hello.test.js
-
 import React from "react";
-// import { render, unmountComponentAtNode } from "react-dom";
-// import { act } from "react-dom/test-utils";
-
 import ButtomHome from "./ButtomHome";
+import { mount, shallow, render} from 'enzyme';
+import { LinkHome } from "../StyledComponents/styledComponents";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../theme/theme";
+import { MemoryRouter } from "react-router-dom";
 
-// let container: any = null;
-// beforeEach(() => {
-//    // configurar un elemento del DOM como objetivo del renderizado
-//    container = document.createElement("div");
-//    document.body.appendChild(container);
-// });
+// export const mountWithTheme = (children: any) =>
+//    mount(<ThemeProvider theme={theme}>{children}</ThemeProvider>);
 
-// afterEach(() => {
-//    // limpieza al salir
-//    unmountComponentAtNode(container);
-//    container.remove();
-//    container = null;
-// });
+export const renderWithTheme = (children: any) =>
+   render(<ThemeProvider theme={theme}>{children}</ThemeProvider>);
 
-// it("renderiza con o sin nombre", () => {
-//    act(() => {
-//       render(<ButtomHome />, container);
-//    });
-//    expect(container.textContent).toBe("Hey, stranger");
+// export const shallowWithTheme = (children: any) =>
+//    shallow(<ThemeProvider theme={theme}>{children}</ThemeProvider>);
 
-// });
 
-import { shallow } from 'enzyme';
+describe('TESTING HOME BUTTOM', () => {
 
-describe('Hello, Enzyme!', () => {
-   it('renders', () => {
-      const wrapper = shallow(<div>
-         <h1>Hello, Enzyme!</h1>
-      </div>)
-      expect(wrapper.find('h1').html()).toMatch(/Hello, Enzyme/)
-   })
+   it(' *** Check url and Value in buttom home ***', () => {
 
-   it('renders snapshots, too', () => {
-      const wrapper = shallow(<div>
-         <h1>Hello, Enzyme!</h1>
-      </div>)
-      expect(wrapper).toMatchSnapshot()
-   })
-})
+      const wrapper = renderWithTheme(
+         <MemoryRouter>
+            <ButtomHome />
+         </MemoryRouter>
+      );
+
+      let anchor = wrapper.find('a'),
+      url = anchor.attr('href'),
+      value = anchor.html();
+
+      expect(url).toEqual('/');   // OK
+      expect(value).toMatch('Go Home');  // OK
+      expect(wrapper).toMatchSnapshot();  // OK
+   });
+
+});
