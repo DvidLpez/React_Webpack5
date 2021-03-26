@@ -53,6 +53,7 @@ const SearchBar: FC = (): ReactElement => {
          <WrapperStates>
             <label>ALL
                <input
+                  id="all"
                   type="radio"
                   name="state"
                   onChange={handleForm}
@@ -62,9 +63,9 @@ const SearchBar: FC = (): ReactElement => {
             </label>
             <label className="open">OPEN
                <input 
+                  id="open"
                   type="radio"
                   name="state"
-                  className=""
                   onChange={handleForm}
                   value="open"
                   checked={'open' == state ? true : false}
@@ -72,6 +73,7 @@ const SearchBar: FC = (): ReactElement => {
             </label>
             <label className="closed">CLOSED
                <input 
+                  id="closed"
                   type="radio"
                   name="state"
                   onChange={handleForm}

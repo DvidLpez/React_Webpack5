@@ -8,23 +8,23 @@ import { MemoryRouter } from "react-router-dom";
 
 describe('TESTING HOME BUTTOM', () => {
 
-   // it(' *** Check url and Value in buttom home ***', () => {
+   it(' *** Check url, value and HTML ***', () => {
 
-   //    const wrapper = render(
-   //       <ThemeProvider theme={theme}>
-   //          <MemoryRouter>
-   //             <ButtomHome />
-   //          </MemoryRouter>
-   //       </ThemeProvider >
-   //    );
+      const wrapper = render(
+         <ThemeProvider theme={theme}>
+            <MemoryRouter>
+               <ButtomHome />
+            </MemoryRouter>
+         </ThemeProvider >
+      );
 
-   //    let anchor = wrapper.find('a'),
-   //    url = anchor.attr('href'),
-   //    value = anchor.html();
+      let anchor = wrapper.find('a'),
+      url = anchor.attr('href'),
+      value = anchor.html();
 
-   //    expect(url).toEqual('/');   // OK
-   //    expect(value).toMatch('Go Home');  // OK
-   //    expect(wrapper).toMatchSnapshot();  // OK
-   // });
-
+      expect(url).toEqual('/');   // OK
+      expect(value).toMatch('Go Home');  // OK
+      expect(wrapper).toMatchSnapshot();  // OK
+   });
 });
+
