@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Page Comments renders snapshots, too 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Component
+    theme={
+      Object {
+        "colors": Object {
+          "backComment": "#fff9d6",
+          "closed": "#c60404",
+          "danger": "#932323",
+          "gradient": "linear-gradient(to right, #3e9e7e 0%, #2e755d 10%, #205040 20%, #414141 30%)",
+          "grey": "#414141",
+          "lightgrey": "#7c7c7c",
+          "primary": "#000",
+          "secondary": "#dbdbdb",
+          "shadow": "2px 4px 11px 1px rgba(138, 138, 138, 1)",
+          "success": "#008000",
+          "tertiary": "#fafafa",
+          "title": "#fff",
+        },
+        "fonts": Object {
+          "big": "2em",
+          "bold": "600",
+          "default": "1em",
+          "extra": "3em",
+          "extraBig": "5em",
+          "large": "1.6em",
+          "medium": "1.2em",
+          "small": "0.9em",
+          "style": "'Source Sans Pro', sans-serif",
+        },
+        "spaces": Object {
+          "borderRadius": "5px",
+          "button": "10px 40px",
+          "center": "center",
+          "none": "0",
+          "p100": "10px 0",
+          "p1010": "10px 10px",
+          "p1515": "15px 15px",
+          "p1520": "15px 20px",
+          "p2020": "20px 20px",
+          "p2525": "25px 25px",
+          "p3030": "30px 30px",
+          "p55": "5px 5px",
+          "s10": "10px",
+          "s15": "15px",
+          "s20": "20px",
+          "s25": "25px",
+          "s30": "30px",
+          "s5": "5px",
+          "s50": "50px",
+        },
+      }
+    }
+  >
+    <MemoryRouter>
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "key": "t4ewd4",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "t4ewd4",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <CommentPage
+          history={Object {}}
+          location={Object {}}
+          match={
+            Object {
+              "params": Object {
+                "number": "aafdasd",
+              },
+            }
+          }
+        >
+          <Header
+            title="Issue comments"
+          >
+            <Styled(styled.div)>
+              <div
+                className="sc-bdfBwQ sc-iqHYGH kUdDos jnqbg"
+              >
+                <FontAwesomeIcon
+                  border={false}
+                  className="icon_brand"
+                  fixedWidth={false}
+                  flip={null}
+                  icon={
+                    Object {
+                      "icon": Array [
+                        496,
+                        512,
+                        Array [],
+                        "f09b",
+                        "M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z",
+                      ],
+                      "iconName": "github",
+                      "prefix": "fab",
+                    }
+                  }
+                  inverse={false}
+                  listItem={false}
+                  mask={null}
+                  pull={null}
+                  pulse={false}
+                  rotation={null}
+                  size={null}
+                  spin={false}
+                  swapOpacity={false}
+                  symbol={false}
+                  title=""
+                  transform={null}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-github fa-w-16 icon_brand"
+                    data-icon="github"
+                    data-prefix="fab"
+                    focusable="false"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 496 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                </FontAwesomeIcon>
+                <Styled(styled.h1)>
+                  <h1
+                    className="sc-gsTCUz sc-kEjbxe jrFgNj elJGYe"
+                  >
+                    Issue comments
+                  </h1>
+                </Styled(styled.h1)>
+              </div>
+            </Styled(styled.div)>
+          </Header>
+          <ButtomHome>
+            <Styled(styled.div)>
+              <div
+                className="sc-bdfBwQ sc-fubCfw kUdDos fwLbUW"
+              >
+                <Styled(Link)
+                  to="/"
+                >
+                  <Link
+                    className="sc-gKsewC fMfLPa"
+                    to="/"
+                  >
+                    <LinkAnchor
+                      className="sc-gKsewC fMfLPa"
+                      href="/"
+                      navigate={[Function]}
+                    >
+                      <a
+                        className="sc-gKsewC fMfLPa"
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Go Home
+                      </a>
+                    </LinkAnchor>
+                  </Link>
+                </Styled(Link)>
+              </div>
+            </Styled(styled.div)>
+          </ButtomHome>
+          <Loading>
+            <Styled(styled.div)>
+              <div
+                className="sc-bdfBwQ sc-crrsfI kUdDos hyZdiz"
+              >
+                <styled.div>
+                  <div
+                    className="sc-dQppl dzisxz"
+                  >
+                    <FontAwesomeIcon
+                      border={false}
+                      className=""
+                      fixedWidth={false}
+                      flip={null}
+                      icon={
+                        Object {
+                          "icon": Array [
+                            512,
+                            512,
+                            Array [],
+                            "f110",
+                            "M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z",
+                          ],
+                          "iconName": "spinner",
+                          "prefix": "fas",
+                        }
+                      }
+                      inverse={false}
+                      listItem={false}
+                      mask={null}
+                      pull={null}
+                      pulse={false}
+                      rotation={null}
+                      size={null}
+                      spin={false}
+                      swapOpacity={false}
+                      symbol={false}
+                      title=""
+                      transform={null}
+                    >
+                      <svg
+                        aria-hidden="true"
+                        className="svg-inline--fa fa-spinner fa-w-16 "
+                        data-icon="spinner"
+                        data-prefix="fas"
+                        focusable="false"
+                        role="img"
+                        style={Object {}}
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
+                          fill="currentColor"
+                          style={Object {}}
+                        />
+                      </svg>
+                    </FontAwesomeIcon>
+                  </div>
+                </styled.div>
+                <Styled(styled.p)>
+                  <p
+                    className="sc-eCssSg sc-bqyKva gGMhBG hpDYSa"
+                  >
+                    Loading
+                  </p>
+                </Styled(styled.p)>
+              </div>
+            </Styled(styled.div)>
+          </Loading>
+        </CommentPage>
+      </Router>
+    </MemoryRouter>
+  </Component>
+</Provider>
+`;

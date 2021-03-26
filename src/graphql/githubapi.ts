@@ -5,12 +5,16 @@ import {
   ApolloLink, 
   NormalizedCacheObject ,
 } from '@apollo/client';
+import fetch from "cross-fetch";
 import {setContext} from '@apollo/client/link/context';
 import {SETTINGS} from '../settings/settings';
 
 const { URI, TOKEN } = SETTINGS.API_GITHUB;
+
+
 const httpLink: ApolloLink = createHttpLink({
-  uri: URI
+  uri: URI,
+  fetch,
 });
 
 const authLink: ApolloLink = setContext((_, { headers }) => {
