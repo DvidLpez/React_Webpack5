@@ -1,6 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TESTING SEARCHBAR *** Check initial state and Render HTML *** 1`] = `
+exports[`TESTING SEARCHBAR COMPONENT - CHECK SEARCH VALUE - Add vaule as a term to search 1`] = `
+<input
+  class="sc-jrAGrp fCthTV"
+  id="searchbar"
+  name="term"
+  placeholder="Search term"
+  type="text"
+  value="useEffect"
+/>
+`;
+
+exports[`TESTING SEARCHBAR COMPONENT - CHECK STATES OPEN AND CLOSE - Input closed is checked 1`] = `
+Array [
+  <input
+    class="sc-jrAGrp fCthTV"
+    id="searchbar"
+    name="term"
+    placeholder="Search term"
+    type="text"
+    value=""
+  />,
+  <input
+    id="all"
+    name="state"
+    type="radio"
+    value=""
+  />,
+  <input
+    id="open"
+    name="state"
+    type="radio"
+    value="open"
+  />,
+  <input
+    checked=""
+    id="closed"
+    name="state"
+    type="radio"
+    value="closed"
+  />,
+]
+`;
+
+exports[`TESTING SEARCHBAR COMPONENT - CHECK STATES OPEN AND CLOSE - Input open is checked 1`] = `
+Array [
+  <input
+    class="sc-jrAGrp fCthTV"
+    id="searchbar"
+    name="term"
+    placeholder="Search term"
+    type="text"
+    value=""
+  />,
+  <input
+    id="all"
+    name="state"
+    type="radio"
+    value=""
+  />,
+  <input
+    checked=""
+    id="open"
+    name="state"
+    type="radio"
+    value="open"
+  />,
+  <input
+    id="closed"
+    name="state"
+    type="radio"
+    value="closed"
+  />,
+]
+`;
+
+exports[`TESTING SEARCHBAR COMPONENT - Default Searchbar HTML output 1`] = `
 Array [
   <div
     class="sc-bdfBwQ sc-fubCfw kUdDos jYqrAh"

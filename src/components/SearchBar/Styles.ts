@@ -40,7 +40,7 @@ export const InputSearch = styled.input`
   border: 1px solid #838383;
   border-radius: ${(props) => props.theme.spaces.s30};
   color: #2e2e2e;
-  font-size: 1em;
+  font-size: ${(props) => props.theme.fonts.default};
   font-style: italic;
   outline: none;
   padding: 7px 10px 7px 10px;
@@ -82,7 +82,7 @@ export const InputSearch = styled.input`
     left: 30px;
     width: 65px;
     height: 50px;
-    font-size: 1.2em;
+    font-size: ${(props) => props.theme.fonts.medium};
     padding: 10px 15px;
     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
     color: white;
@@ -120,7 +120,7 @@ export const InputSearch = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 1.2em;
+    font-size: ${(props) => props.theme.fonts.medium};
     padding: 15px 20px 15px 40px;
     text-indent: 90px;
     &::-webkit-input-placeholder {
@@ -131,7 +131,7 @@ export const InputSearch = styled.input`
       left: 30px;
       width: 65px;
       height: 50px;
-      font-size: 1.2em;
+      font-size: ${(props) => props.theme.fonts.medium};
       padding: 10px 15px;
       transition: all 0.4s ease-in-out;
       transform-origin: left bottom;

@@ -8,8 +8,7 @@ import { MemoryRouter } from "react-router-dom";
 
 describe('TESTING HOME BUTTOM', () => {
 
-   it(' *** Check url, value and HTML ***', () => {
-
+   it('- Check url, value and HTML output', () => {
       const wrapper = render(
          <ThemeProvider theme={theme}>
             <MemoryRouter>
@@ -27,4 +26,3 @@ describe('TESTING HOME BUTTOM', () => {
       expect(wrapper).toMatchSnapshot();  // OK
    });
 });
-
