@@ -19,8 +19,8 @@ export const WrapperIssue = styled(Wrapper)`
 `;
 
 export const Card = styled(Wrapper)`
-  background-color: ${(props) => props.theme.colors.title};
-  border: 1px solid ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.white};
+  border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: ${(props) => props.theme.spaces.borderRadius};
   overflow: hidden;
   padding: ${(props) => props.theme.spaces.s15};
@@ -32,8 +32,8 @@ export const Card = styled(Wrapper)`
 `;
 
 export const TitleIssue = styled(Text)`
-  font-size: ${(props) => props.theme.fonts.medium};
-  font-weight: ${(props) => props.theme.fonts.bold};
+  font-size: ${(props) => props.theme.fonts.size.medium};
+  font-weight: ${(props) => props.theme.fonts.weight.bold};
 `;
 export const InfoComments = styled(Text)`
   float: left;
@@ -45,10 +45,10 @@ type IProps = {
 }
 export const StateIssue = styled(Text)<IProps>`
   float: right;
-  color: ${(props) => props.theme.colors.title};
+  color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spaces.s5};
   border-radius: ${(props) => props.theme.spaces.borderRadius};
-  font-weight: ${(props) => props.theme.fonts.bold};
+  font-weight: ${(props) => props.theme.fonts.weight.bold};
   margin: ${(props) => props.theme.spaces.none};
   background-color: ${(props) =>
     props.state == "closed" ? "#c60404" : "#008000"};

@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
    }
    body {
-         background-color: ${theme.colors.tertiary};
-         font-family: ${theme.fonts.style};
+         background-color: ${theme.colors.bgBody};
+         font-family: ${theme.fonts.style.primary};
          padding: ${theme.spaces.none};
          margin: ${theme.spaces.none};
    }
@@ -21,22 +21,22 @@ export const GlobalStyle = createGlobalStyle`
    }
 
    .icon_brand {
-      font-size: ${theme.fonts.big};
+      font-size: ${theme.fonts.size.big};
       margin-right: ${theme.spaces.s15};
-      color: ${theme.colors.title};
+      color: ${theme.colors.white};
    }
 
    .icon_sweat {
-      font-size: ${theme.fonts.extra};
+      font-size: ${theme.fonts.size.extra};
    }
 
    .icon_error {
-      font-size: ${theme.fonts.extraBig};
+      font-size: ${theme.fonts.size.extraBig};
    }
 
    .icon_search {
-      color: ${theme.colors.title};
-      font-size: ${theme.fonts.small};
+      color: ${theme.colors.white};
+      font-size: ${theme.fonts.size.small};
       position: absolute;
       top: ${theme.spaces.s10};
       right: 38%;
@@ -44,17 +44,17 @@ export const GlobalStyle = createGlobalStyle`
 
    a{
       text-decoration: none;
-      color: ${theme.colors.primary};
+      color: ${theme.colors.link};
    }
 
    @media screen and (min-width: 768px) {
    
       .icon_brand {
-         font-size: ${theme.fonts.extra};
+         font-size: ${theme.fonts.size.extra};
       }
 
       .icon_search {
-        font-size: ${theme.fonts.medium};
+        font-size: ${theme.fonts.size.medium};
         top: ${theme.spaces.s15};
         right: 6%;
       }

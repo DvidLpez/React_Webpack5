@@ -6,7 +6,7 @@ import {
 
 
 export const WrapperProblem = styled(Wrapper)`
-  background-color: ${(props) => props.theme.colors.title};
+  background-color: ${(props) => props.theme.colors.white};
   border: 1px solid #d3d3d3;
   border-radius: ${(props) => props.theme.spaces.borderRadius};
   padding: 10px 20px;
@@ -46,8 +46,9 @@ type IProps = {
 }
 
 export const TextState = styled(Text)<IProps>`
-  background-color: ${(props) => props.state == "closed" ? "#c60404" : "#007800"};
-  color: ${(props) => props.theme.colors.title};
+  background-color: ${(props) =>
+    props.state == "closed" ? "#c60404" : "#007800"};
+  color: ${(props) => props.theme.colors.white};
   padding: ${(props) => props.theme.spaces.s10};
   border-radius: ${(props) => props.theme.spaces.borderRadius};
   font-weight: 600;

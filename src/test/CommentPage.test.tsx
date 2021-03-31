@@ -9,8 +9,6 @@ import store from "../redux/store";
 import * as reactRedux from 'react-redux';
 import IIssue from "../interfaces/IIssue";
 
-
-
 const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
 
 const routeComponentPropsMock = {
@@ -59,45 +57,36 @@ const renderWrapper = () => {
 }
 
 describe('TESTING COMMENT PAGE', () => {
-   it('- Render page with issue in Redux', () => {
-
+   
+   it('- Render page with issue and comments', () => {
       beforeEach(() => {
          useSelectorMock.mockClear();
       });
-
       useSelectorMock.mockReturnValue({ data: [IsuueMock], loading: false, error: false});
       const wrapper = renderWrapper();
       expect(wrapper.find('h1').first().text()).toEqual('Issue comments');
       expect(wrapper.find('h3').text()).toEqual('*** Comments ***');
       expect(wrapper.find('div').hasClass('comment_html')).toBeTruthy();
-
       expect(wrapper).toMatchSnapshot();
    });
-
-
+   
    it('- Render page if is loading', () => {
-
       beforeEach(() => {
          useSelectorMock.mockClear();
       });
-
       useSelectorMock.mockReturnValue({ data: [], loading: true, error: false });
       const wrapper = renderWrapper();
       expect(wrapper.find('p').text()).toEqual('Loading');
       expect(wrapper).toMatchSnapshot();
    });
    
-   
-   
    it('- Render page if has an error', () => {
-      
       beforeEach(() => {
          useSelectorMock.mockClear();
       });
-      
       useSelectorMock.mockReturnValue({ data: [], loading: false, error: true });
       const wrapper = renderWrapper();
       expect(wrapper.find('p').text()).toEqual('Opps!! We have an error. Try again!!');
       expect(wrapper).toMatchSnapshot();
    });
-})
+});

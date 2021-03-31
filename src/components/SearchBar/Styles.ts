@@ -11,11 +11,12 @@ export const WrapperSearch = styled(Wrapper)`
     padding: 10px 30px;
   }
 `;
+
 export const WrapperStates = styled(Wrapper)`
   text-align: ${(props) => props.theme.spaces.center};
   label {
-    font-size: ${(props) => props.theme.fonts.medium};
-    font-weight: ${(props) => props.theme.fonts.bold};
+    font-size: ${(props) => props.theme.fonts.size.medium};
+    font-weight: ${(props) => props.theme.fonts.weight.bold};
     margin: 0 6%;
     cursor: pointer;
   }
@@ -29,45 +30,42 @@ export const WrapperStates = styled(Wrapper)`
   @media screen and (min-width: 768px) {
     padding: ${(props) => props.theme.spaces.s15};
     label {
-      font-size: ${(props) => props.theme.fonts.large};
+      font-size: ${(props) => props.theme.fonts.size.large};
     }
   }
 `;
 
-
-
 export const InputSearch = styled.input`
-  border: 1px solid #838383;
+  border: 1px solid ${(props) => props.theme.colors.lightgrey};
   border-radius: ${(props) => props.theme.spaces.s30};
   color: #2e2e2e;
-  font-size: ${(props) => props.theme.fonts.default};
+  font-size: ${(props) => props.theme.fonts.size.default};
   font-style: italic;
   outline: none;
   padding: 7px 10px 7px 10px;
   width: 100%;
-  -webkit-box-shadow: 0 0 20px 5px rgb(163, 163, 163);
-  -moz-box-shadow: 0 0 20px 5px rgba(163, 163, 163, 1);
-  box-shadow: 0 0 20px 5px rgba(163, 163, 163, 1);
+  -webkit-box-shadow: ${(props) => props.theme.colors.shadow.inputSearch};
+  -moz-box-shadow: ${(props) => props.theme.colors.shadow.inputSearch};
+  box-shadow: ${(props) => props.theme.colors.shadow.inputSearch};
   text-indent: 55px;
   transition: all 0.3s ease-in-out;
 
   &::-webkit-input-placeholder {
-    color: #cccccc;
+    color: ${(props) => props.theme.colors.placeholder};
     text-indent: 50px;
-    font-weight: 300;
   }
 
   &:focus,
   &:active {
     text-indent: ${(props) => props.theme.spaces.none};
-    background: #fff;
+    background: ${(props) => props.theme.colors.white};
     &::-webkit-input-placeholder {
-      color: #aaa;
+      color: ${(props) => props.theme.colors.placeholder};
       text-indent: 3px;
     }
     + label {
       transform: rotate(-66deg);
-      border-radius: 30px;
+      border-radius: ${(props) => props.theme.spaces.s30};
 
       &:before {
         transform: rotate(10deg);
@@ -78,17 +76,17 @@ export const InputSearch = styled.input`
   + label {
     display: inline-block;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: ${(props) => props.theme.spaces.s30};
+    left: ${(props) => props.theme.spaces.s30};
     width: 65px;
     height: 50px;
-    font-size: ${(props) => props.theme.fonts.medium};
+    font-size: ${(props) => props.theme.fonts.size.medium};
     padding: 10px 15px;
-    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-    color: white;
+    text-shadow: ${(props) => props.theme.colors.shadow.labelSearch};
+    color: ${(props) => props.theme.colors.white};
 
     transition: all 0.4s ease-in-out;
-    border-radius: 30px;
+    border-radius: ${(props) => props.theme.spaces.s30};
     transform-origin: left bottom;
     z-index: 99;
 
@@ -102,10 +100,10 @@ export const InputSearch = styled.input`
       left: ${(props) => props.theme.spaces.none};
       width: 55px;
       height: 35px;
-      border-radius: 30px;
+      border-radius: ${(props) => props.theme.spaces.s30};
       border-top-right-radius: ${(props) => props.theme.spaces.none};
       border-bottom-right-radius: ${(props) => props.theme.spaces.none};
-      background: #377d6a;
+      background: ${(props) => props.theme.colors.labelSearch};
       transform-origin: left bottom;
       transition: all 0.4s ease-in-out;
       pointer-events: none;
@@ -120,7 +118,7 @@ export const InputSearch = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: ${(props) => props.theme.fonts.medium};
+    font-size: ${(props) => props.theme.fonts.size.medium};
     padding: 15px 20px 15px 40px;
     text-indent: 90px;
     &::-webkit-input-placeholder {
@@ -128,10 +126,10 @@ export const InputSearch = styled.input`
     }
     + label {
       top: 9px;
-      left: 30px;
+      left: ${(props) => props.theme.spaces.s30};
       width: 65px;
       height: 50px;
-      font-size: ${(props) => props.theme.fonts.medium};
+      font-size: ${(props) => props.theme.fonts.size.medium};
       padding: 10px 15px;
       transition: all 0.4s ease-in-out;
       transform-origin: left bottom;
@@ -143,4 +141,3 @@ export const InputSearch = styled.input`
     }
   }
 `;
-

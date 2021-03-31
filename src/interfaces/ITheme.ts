@@ -1,7 +1,9 @@
 export default interface ITheme {
-  theme: {
-    fonts: {
-      style: string;
+  fonts: {
+    style: {
+      primary: string;
+    };
+    size: {
       small: string;
       default: string;
       medium: string;
@@ -9,42 +11,52 @@ export default interface ITheme {
       big: string;
       extra: string;
       extraBig: string;
+    };
+    weight: {
       bold: string;
     };
-    colors: {
-      primary: string;
-      secondary: string;
-      tertiary: string;
-      grey: string;
-      lightgrey: string;
-      gradient: string;
-      title: string;
-      success: string;
-      closed: string;
-      danger: string;
-      backComment: string;
-      shadow: string;
+  };
+  colors: {
+    placeholder: string;
+    link: string;
+    border: string;
+    lightgrey: string;
+    white: string;
+    success: string;
+    closed: string;
+    danger: string;
+    labelSearch: string;
+    bgBody: string;
+    bgButtons: string;
+    bgComment: string;
+    gradient: {
+      bgHeader: string;
     };
-    spaces: {
-      none: string;
-      center: string;
-      s5: string;
-      s10: string;
-      s15: string;
-      s20: string;
-      s25: string;
-      s30: string;
-      s50: string;
-      p55: string;
-      p100: string;
-      p1520: string;
-      p1010: string;
-      p1515: string;
-      p2020: string;
-      p2525: string;
-      p3030: string;
-      button: string;
-      borderRadius: string;
+    shadow: {
+      linkHome: string;
+      inputSearch: string;
+      labelSearch: string;
     };
+  };
+  spaces: {
+    none: string;
+    center: string;
+    s5: string;
+    s10: string;
+    s15: string;
+    s20: string;
+    s25: string;
+    s30: string;
+    s50: string;
+    p55: string;
+    p100: string;
+    p1520: string;
+    p1010: string;
+    p1515: string;
+    p2020: string;
+    p2525: string;
+    p3030: string;
+    button: string;
+    borderRadius: string;
   };
 }

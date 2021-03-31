@@ -36,10 +36,10 @@ export const Rotate = styled.div`
   text-align: ${(props) => props.theme.spaces.center};
   display: inline-block;
   animation: ${rotate} 2s linear infinite;
-  font-size: ${(props) => props.theme.fonts.extra};
+  font-size: ${(props) => props.theme.fonts.size.extra};
 `;
 
 export const TextLoading = styled(Text)`
-  font-size: ${(props) => props.theme.fonts.medium};
-  font-weight: ${(props) => props.theme.fonts.bold};
+  font-size: ${(props) => props.theme.fonts.size.medium};
+  font-weight: ${(props) => props.theme.fonts.weight.bold};
 `;

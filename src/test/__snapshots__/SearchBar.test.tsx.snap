@@ -2,7 +2,7 @@
 
 exports[`TESTING SEARCHBAR COMPONENT - CHECK SEARCH VALUE - Add vaule as a term to search 1`] = `
 <input
-  class="sc-jrAGrp fCthTV"
+  class="sc-jrAGrp fmhCmY"
   id="searchbar"
   name="term"
   placeholder="Search term"
@@ -14,7 +14,7 @@ exports[`TESTING SEARCHBAR COMPONENT - CHECK SEARCH VALUE - Add vaule as a term 
 exports[`TESTING SEARCHBAR COMPONENT - CHECK STATES OPEN AND CLOSE - Input closed is checked 1`] = `
 Array [
   <input
-    class="sc-jrAGrp fCthTV"
+    class="sc-jrAGrp fmhCmY"
     id="searchbar"
     name="term"
     placeholder="Search term"
@@ -46,7 +46,7 @@ Array [
 exports[`TESTING SEARCHBAR COMPONENT - CHECK STATES OPEN AND CLOSE - Input open is checked 1`] = `
 Array [
   <input
-    class="sc-jrAGrp fCthTV"
+    class="sc-jrAGrp fmhCmY"
     id="searchbar"
     name="term"
     placeholder="Search term"
@@ -81,7 +81,7 @@ Array [
     class="sc-bdfBwQ sc-fubCfw kUdDos jYqrAh"
   >
     <input
-      class="sc-jrAGrp fCthTV"
+      class="sc-jrAGrp fmhCmY"
       id="searchbar"
       name="term"
       placeholder="Search term"
