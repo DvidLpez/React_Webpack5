@@ -11,12 +11,14 @@
 - [Redux] - Redux
 - [TypeScript] - TypeScript
 - [Babel] - Babel
-- [SASS] - SCSS
+- [Styled Components] - Styled Components
 - [ApolloGraphQl] - ApolloGraphQl
 - [API Github] - API Github GraphQl
 - [Git] - Git
 - [FontAwesome] - Font Awesome
 - [MomentJS] - MomentJS
+- [Jest] - Jest
+- [Enzyme] - Enzyme
 
 
 
@@ -49,10 +51,15 @@ npm install --save-dev babel-loader
 npm install --save-dev html-webpack-plugin
 ```
 
-Adding SCSS
+Adding Styled Component
 ```
-npm install --save-dev css-loader
-npm install --save-dev sass-loader sass webpack
+npm install --save styled-components
+```
+Adding Jest/Enzyme
+```
+npm install --save-dev jest
+npm install --dev @types/jest
+npm install --save-dev enzyme enzyme-adapter-react-16
 ```
 
 Configuring Development
@@ -94,11 +101,13 @@ npm run build
    [Redux]: <https://redux.js.org/>
    [TypeScript]: <https://www.typescriptlang.org/>
    [Babel]: <https://babeljs.io/docs/en/>
-   [SASS]: <https://sass-lang.com/>
+   [Styled Components]: <https://styled-components.com/>
    [ApolloGraphQl]: <https://www.apollographql.com/>
    [API Github]: <https://docs.github.com/en/graphql>
    [Git]: <https://git-scm.com/>
    [FontAwesome]: <https://fontawesome.com/>
    [MomentJS]: <https://momentjs.com/>
+   [Jest]: <https://jestjs.io/>
+   [Enzyme]: <https://enzymejs.github.io/enzyme/>
   
 
