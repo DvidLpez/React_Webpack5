@@ -9,11 +9,7 @@ export const WrapperPaginate = styled(Wrapper)`
 `;
 
 
-type Props = {
-  previous?: boolean;
-  next?: boolean;
-};
-export const ButtonPaginate = styled.button<Props>`
+export const ButtonPaginate = styled.button`
   width: 170px;
   margin: 5px 10px;
   padding: 8px 10px 5px;
@@ -31,17 +27,5 @@ export const ButtonPaginate = styled.button<Props>`
   &:disabled {
     background-color: ${(props) => props.theme.colors.white};
     color: rgb(223, 223, 223);
-  }
-  &::before {
-    content: ${(props) => (props.previous ? "<" : null)};
-    font-size: ${(props) => props.theme.fonts.size.medium};
-    vertical-align: middle;
-    margin: 0 5px;
-  }
-  &::after {
-    content: ${(props) => (props.next ? ">" : null)};
-    font-size: ${(props) => props.theme.fonts.size.medium};
-    vertical-align: middle;
-    margin: 0 5px;
   }
 `;

@@ -1,4 +1,6 @@
 import React, { FC, Fragment, ReactElement } from "react";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { loadIssuesAction } from "../../redux/actions/issuesAction";
 import IAppState from "../../interfaces/IAppState";
@@ -7,7 +9,7 @@ import { WrapperPaginate, ButtonPaginate } from './Styles';
 const Pagination: FC = (): ReactElement => {
 
    const { term, status, pageInfo, data, loading } = useSelector((state: IAppState) => state.issues);
-   const {hasPreviousPage, hasNextPage} = pageInfo;
+   const { hasPreviousPage, hasNextPage } = pageInfo;
 
    const dispatch = useDispatch();
 
@@ -22,20 +24,24 @@ const Pagination: FC = (): ReactElement => {
 
    return (
       <Fragment>
-         { data.length > 0 && loading == false 
-            ? 
+         { data.length > 0 && loading == false
+            ?
             <WrapperPaginate>
-                  {  hasPreviousPage 
-                        ? <ButtonPaginate previous disabled={!hasPreviousPage}  onClick={() => moreItems('prev')}> Previous page</ButtonPaginate>
-                        : null
-                  }
-                  {  hasNextPage 
-                        ? <ButtonPaginate next disabled={!hasNextPage} onClick={() => moreItems('next')}> Next page</ButtonPaginate>
-                        : null
-                  }
-            </WrapperPaginate> 
-            : 
-               null
+               {hasPreviousPage
+                  ? <ButtonPaginate disabled={!hasPreviousPage} onClick={() => moreItems('prev')}>
+                        <FontAwesomeIcon icon={faAngleLeft} /> Previous page
+                     </ButtonPaginate>
+                  : null
+               }
+               {hasNextPage
+                  ? <ButtonPaginate disabled={!hasNextPage} onClick={() => moreItems('next')}>
+                        Next page <FontAwesomeIcon icon={faAngleRight} />
+                  </ButtonPaginate>
+                  : null
+               }
+            </WrapperPaginate>
+            :
+            null
          }
       </Fragment>
    )

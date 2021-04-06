@@ -34,11 +34,14 @@ export const theme: ITheme = {
     gradient: {
       bgHeader:
         "linear-gradient(to right, #3e9e7e 0%, #2e755d 10%, #205040 20%, #414141 30%)",
+      opacityBox:
+        "linear-gradient( 180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.48503151260504207) 50%, rgba(255, 255, 255, 1) 100%)",
     },
     shadow: {
       linkHome: "2px 4px 11px 1px rgba(138, 138, 138, 1)",
       inputSearch: "0 0 20px 5px rgba(163, 163, 163, 1)",
       labelSearch: "0 1px 0 rgba(19, 74, 70, 0.4)",
+      card: "0px 0px 10px 1px rgba(145, 145, 145, 1)",
     },
   },
   spaces: {
