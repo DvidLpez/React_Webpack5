@@ -1,41 +1,43 @@
-import React, { FC, Fragment, ReactElement, useEffect, useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import IAppState from "../../interfaces/IAppState";
-import { loadIssuesAction } from "../../redux/actions/issuesAction";
+import React, { FC, Fragment, ReactElement, useEffect} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { InputSearch, WrapperSearch, WrapperStates } from './Styles';
+import { inputVar } from '../../cache';
+import { LoadIssues } from '../../graphql/manage';
+import { useReactiveVar } from "@apollo/client";
+
 
 const SearchBar: FC = (): ReactElement => {
 
-   const { term:word, status: statusCheckBox } = useSelector((state: IAppState) => state.issues);
-
-   const [form, setForm] = useState({
-      term: word,
-      state: statusCheckBox
-   })
-   
-   const { term, state } = form;
-   const dispatch = useDispatch();
-   
+  
+   const { term, status } = useReactiveVar(inputVar);
    
    const handleForm = (e:React.ChangeEvent<HTMLInputElement>) => { 
-      setForm({
-         ...form,
-         [e.target.name]: e.target.value
-      })
+      e.target.name === "term" 
+         ? inputVar({term: e.target.value, status}) 
+         : inputVar({term, status: e.target.value});
+
+         
    }
-   
+
+
    useEffect( ()=> {
+
+      console.log('Dentro de effect term y status - ' , inputVar());
       const delayDebounce = setTimeout(() => {
             if (term.trim().length > 2) {
-               dispatch(loadIssuesAction(term.trim(), state, 9, 'next', null));
+               LoadIssues(term.trim(), status, 9, 'next', null);
             }
-      }, 500)
-      return () => clearTimeout(delayDebounce)
-      
-   }, [term, state, dispatch]);
+            return () => clearTimeout(delayDebounce);
+      }, 500);
+   }, [term]);
 
+   useEffect( ()=> {
+      console.log('Dentro de effect status - ', inputVar());
+      if (term.trim().length > 2) {
+         LoadIssues(term.trim(), status, 9, 'next', null);
+      }
+   }, [status]);
 
    return(
       <Fragment>
@@ -58,7 +60,7 @@ const SearchBar: FC = (): ReactElement => {
                   name="state"
                   onChange={handleForm}
                   value=""
-                  checked={'' == state ? true : false}
+                  checked={'' == status ? true : false}
                />
             </label>
             <label className="open">OPEN
@@ -68,7 +70,7 @@ const SearchBar: FC = (): ReactElement => {
                   name="state"
                   onChange={handleForm}
                   value="open"
-                  checked={'open' == state ? true : false}
+                  checked={'open' == status ? true : false}
                />
             </label>
             <label className="closed">CLOSED
@@ -78,7 +80,7 @@ const SearchBar: FC = (): ReactElement => {
                   name="state"
                   onChange={handleForm}
                   value="closed"
-                  checked={'closed' == state ? true : false}
+                  checked={'closed' == status ? true : false}
                />
             </label>
          </WrapperStates>

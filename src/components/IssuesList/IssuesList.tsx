@@ -1,6 +1,4 @@
 import React, { FC, Fragment, ReactElement } from "react";
-import { useSelector } from "react-redux";
-import IAppState from "../../interfaces/IAppState";
 import IIssue from '../../interfaces/IIssue';
 import IPropsIssueList from "../../interfaces/IPropsIssueList";
 import Issue from "../Issue/Issue";
@@ -8,12 +6,16 @@ import { faGrinBeamSweat } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Text } from "../StyledComponents/styledComponents";
 import { WrapperNoResult, WrapperIssues, TextCount } from "./Styles";
+import { inputVar, totalVar } from "../../cache";
+import { useReactiveVar } from "@apollo/client";
 
 const IssuesList: FC<IPropsIssueList> = ({data}: IPropsIssueList): ReactElement => {
 
-   const items:Array<IIssue> = data;
-   const {term, issueCount} = useSelector( (state:IAppState) => state.issues);
-   
+
+   const { term } = useReactiveVar(inputVar);
+   const  issueCount  = useReactiveVar(totalVar);
+   const items: Array<IIssue> = data;
+
    return (
       <Fragment>
          { items.length == 0 && term.length > 0 

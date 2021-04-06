@@ -4,8 +4,6 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../theme/theme";
 import { MemoryRouter } from 'react-router-dom';
 import CommentPage from "../pages/CommentPage/CommentPage";
-import { Provider } from "react-redux";
-import store from "../redux/store";
 import * as reactRedux from 'react-redux';
 import IIssue from "../interfaces/IIssue";
 
@@ -46,13 +44,11 @@ const IsuueMock:IIssue = {
 
 const renderWrapper = () => {
    return render(
-      <Provider store={store}>
          <ThemeProvider theme={theme}>
             <MemoryRouter>
                <CommentPage  {...routeComponentPropsMock} />
             </MemoryRouter>
          </ThemeProvider>
-      </Provider>
    )
 }
 

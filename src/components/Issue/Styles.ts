@@ -25,9 +25,7 @@ export const Card = styled(Wrapper)`
   overflow: hidden;
   padding: ${(props) => props.theme.spaces.s15};
   &:hover {
-    -webkit-box-shadow: 0px 0px 10px 1px rgb(145, 145, 145);
-    -moz-box-shadow: 0px 0px 10px 1px rgba(145, 145, 145, 1);
-    box-shadow: 0px 0px 10px 1px rgba(145, 145, 145, 1);
+    box-shadow: ${(props) => props.theme.colors.shadow.card};
   }
 `;
 
@@ -43,6 +41,7 @@ export const InfoComments = styled(Text)`
 type IProps = {
    state: string;
 }
+
 export const StateIssue = styled(Text)<IProps>`
   float: right;
   color: ${(props) => props.theme.colors.white};
@@ -51,7 +50,9 @@ export const StateIssue = styled(Text)<IProps>`
   font-weight: ${(props) => props.theme.fonts.weight.bold};
   margin: ${(props) => props.theme.spaces.none};
   background-color: ${(props) =>
-    props.state == "closed" ? "#c60404" : "#008000"};
+    props.state == "closed"
+      ? props.theme.colors.closed
+      : props.theme.colors.success};
 `;
 
 export const InfoBody = styled.div`
@@ -70,25 +71,7 @@ export const WrapperOpacity = styled.div`
   left: ${(props) => props.theme.spaces.none};
   width: 100%;
   height: 100%;
-  background: rgb(255, 255, 255);
-  background: -moz-linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.48503151260504207) 50%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.48503151260504207) 50%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.48503151260504207) 50%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: ${(props) => props.theme.colors.gradient.opacityBox};
 `;
 
 

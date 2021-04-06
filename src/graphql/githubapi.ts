@@ -1,13 +1,14 @@
 import { 
   ApolloClient,
-  InMemoryCache, 
   createHttpLink, 
   ApolloLink, 
-  NormalizedCacheObject ,
+  NormalizedCacheObject,
+  gql
 } from '@apollo/client';
 import fetch from "cross-fetch";
 import {setContext} from '@apollo/client/link/context';
 import {SETTINGS} from '../settings/settings';
+import { cache } from '../cache';
 
 const { URI, TOKEN } = SETTINGS.API_GITHUB;
 
@@ -26,10 +27,23 @@ const authLink: ApolloLink = setContext((_, { headers }) => {
   };
 });
 
+
+// Squema
+export const typeDefs = gql`
+  extend type Query {
+    getLoadingVar: Boolean!
+    getErrorVar: Boolean!
+  }
+`;
+
+
+
+
+
 const client :ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
-   
+  cache,
+  typeDefs
 });
 
 export default client;

@@ -9,9 +9,6 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 // Apollo GraphQl
 import { ApolloProvider } from '@apollo/client';
 import client from "./graphql/githubapi";
-// Redux Management
-import { Provider } from 'react-redux';
-import store from './redux/store';
 // Theme with styledComponents
 import { ThemeProvider} from 'styled-components';
 import { theme } from "./theme/theme";
@@ -19,7 +16,6 @@ import { GlobalStyle } from "./theme/globalStyles";
 
 
 ReactDOM.render( 
-   <Provider store={store}>
       <ApolloProvider client={client}>
          <ThemeProvider theme={theme}>
             <React.StrictMode>
@@ -33,8 +29,6 @@ ReactDOM.render(
                </Router>
             </React.StrictMode>
          </ThemeProvider>
-      </ApolloProvider>
-   </Provider>,
-
+      </ApolloProvider>,
   document.getElementById("root")
 );

@@ -48,7 +48,7 @@ export const GET_ISSUES_REACT: DocumentNode = gql`
  */
 export const GET_BACK_ISSUES_REACT: DocumentNode = gql`
   query($query: String!, $total: Int!, $cursor: String) {
-    search(query: $query, type: ISSUE, last: $total, before: $cursor) {
+    search (query: $query, type: ISSUE, last: $total, before: $cursor) {
       issueCount
       pageInfo {
         endCursor
@@ -91,7 +91,7 @@ export const GET_BACK_ISSUES_REACT: DocumentNode = gql`
  */
 export const GET_ISSUE_REACT: DocumentNode = gql`
   query($number: Int!, $owner: String!, $name: String!) {
-    repository(owner: $owner, name: $name) {
+    repository (owner: $owner, name: $name) {
       issue(number: $number) {
         number
         title
@@ -117,5 +117,11 @@ export const GET_ISSUE_REACT: DocumentNode = gql`
         }
       }
     }
+  }
+`;
+
+export const GET_STATE: DocumentNode = gql`
+  query GetGlobalState {
+    localState @client
   }
 `;

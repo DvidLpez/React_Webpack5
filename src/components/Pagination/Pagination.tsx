@@ -1,36 +1,40 @@
 import React, { FC, Fragment, ReactElement } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loadIssuesAction } from "../../redux/actions/issuesAction";
-import IAppState from "../../interfaces/IAppState";
+import { faAngleLeft , faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { WrapperPaginate, ButtonPaginate } from './Styles';
+import { inputVar, loadingVar, dataVar, paginationVar } from '../../cache';
+import { useReactiveVar } from "@apollo/client";
+import { LoadIssues } from "../../graphql/manage";
 
 const Pagination: FC = (): ReactElement => {
-
-   const { term, status, pageInfo, data, loading } = useSelector((state: IAppState) => state.issues);
-   const {hasPreviousPage, hasNextPage} = pageInfo;
-
-   const dispatch = useDispatch();
-
-   // Funtion to paginate issues
+   
+   const data = useReactiveVar(dataVar);
+   const loading = useReactiveVar(loadingVar);
+   const { term, status } = useReactiveVar(inputVar);
+   const { hasPreviousPage, hasNextPage, startCursor, endCursor} = useReactiveVar(paginationVar);
+  
    const moreItems = (e: string) => {
       if (e === 'prev') {
-         dispatch(loadIssuesAction(term, status, 9, 'prev', pageInfo.startCursor));
+         LoadIssues(term, status, 9, 'prev', startCursor);
       } else {
-         dispatch(loadIssuesAction(term, status, 9, 'next', pageInfo.endCursor));
+         LoadIssues(term, status, 9, 'next', endCursor);
       }
    }
-
    return (
       <Fragment>
          { data.length > 0 && loading == false 
             ? 
             <WrapperPaginate>
                   {  hasPreviousPage 
-                        ? <ButtonPaginate previous disabled={!hasPreviousPage}  onClick={() => moreItems('prev')}> Previous page</ButtonPaginate>
+                  ? <ButtonPaginate disabled={!hasPreviousPage} onClick={() => moreItems('prev')}>
+                        <FontAwesomeIcon icon={faAngleLeft} /> Previous page
+                     </ButtonPaginate>
                         : null
                   }
                   {  hasNextPage 
-                        ? <ButtonPaginate next disabled={!hasNextPage} onClick={() => moreItems('next')}> Next page</ButtonPaginate>
+                        ? <ButtonPaginate disabled={!hasNextPage} onClick={() => moreItems('next')}> 
+                        Next page <FontAwesomeIcon icon={faAngleRight} />
+                           </ButtonPaginate>
                         : null
                   }
             </WrapperPaginate> 

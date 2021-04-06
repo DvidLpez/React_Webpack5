@@ -31,11 +31,13 @@ export default interface ITheme {
     bgComment: string;
     gradient: {
       bgHeader: string;
+      opacityBox: string;
     };
     shadow: {
       linkHome: string;
       inputSearch: string;
       labelSearch: string;
+      card: string;
     };
   };
   spaces: {
