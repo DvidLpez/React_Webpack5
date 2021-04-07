@@ -15,9 +15,7 @@ const SearchBar: FC = (): ReactElement => {
    const handleForm = (e:React.ChangeEvent<HTMLInputElement>) => { 
       e.target.name === "term" 
          ? inputVar({term: e.target.value, status}) 
-         : inputVar({term, status: e.target.value});
-
-         
+         : inputVar({term, status: e.target.value}); 
    }
 
 
@@ -30,14 +28,7 @@ const SearchBar: FC = (): ReactElement => {
             }
             return () => clearTimeout(delayDebounce);
       }, 500);
-   }, [term]);
-
-   useEffect( ()=> {
-      console.log('Dentro de effect status - ', inputVar());
-      if (term.trim().length > 2) {
-         LoadIssues(term.trim(), status, 9, 'next', null);
-      }
-   }, [status]);
+   }, [term, status]);
 
    return(
       <Fragment>

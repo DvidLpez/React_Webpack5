@@ -4,11 +4,8 @@ import IIssue from "./interfaces/IIssue";
 import IPageInfo from './interfaces/IPageInfo';
 
 
-export const inputVar: ReactiveVar<IInputSearch> = makeVar<IInputSearch>({
-  term: "",
-  status: "",
-});
 
+// Set initial local state
 export const loadingVar: ReactiveVar<boolean> = makeVar<boolean>(false);
 export const errorVar: ReactiveVar<boolean> = makeVar<boolean>(false);
 export const dataVar: ReactiveVar<IIssue[]> = makeVar<IIssue[]>([]);
@@ -20,6 +17,13 @@ export const paginationVar: ReactiveVar<IPageInfo> = makeVar<IPageInfo>({
   startCursor: null,
 });
 
+export const inputVar: ReactiveVar<IInputSearch> = makeVar<IInputSearch>({
+  term: "",
+  status: "",
+});
+
+
+// Set local state in cache (NOT FINISH YET) 
 export const cache: InMemoryCache = new InMemoryCache({
   typePolicies: {
     Query: {

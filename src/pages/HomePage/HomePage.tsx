@@ -11,16 +11,12 @@ import { useReactiveVar } from "@apollo/client";
 
 
 
+
 const HomePage: FC = (): ReactElement => {
 
    const data = useReactiveVar(dataVar);
    const loading = useReactiveVar(loadingVar);
    const issues: Array<IIssue> = data;
-
-  
-      console.log('En HomePage Loading ', loading);
-   
-
 
    return(
       <Fragment>
